@@ -1,0 +1,91 @@
+{
+  "category": "gpu",
+  "description": "GPU-accelerated instances for ML, AI, and graphics workloads",
+  "instances": [
+    {
+      "name": "gpu-small-v1",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "storage_gb": 200,
+      "gpu_type": "T4",
+      "gpu_count": 1,
+      "gpu_memory_gb": 16,
+      "network_bandwidth_gbps": 10,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.526
+    },
+    {
+      "name": "gpu-medium-v1",
+      "vcpus": 16,
+      "memory_gb": 64,
+      "storage_gb": 500,
+      "gpu_type": "A10G",
+      "gpu_count": 1,
+      "gpu_memory_gb": 24,
+      "network_bandwidth_gbps": 15,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 1.212
+    },
+    {
+      "name": "gpu-large-v1",
+      "vcpus": 32,
+      "memory_gb": 128,
+      "storage_gb": 1000,
+      "gpu_type": "A100",
+      "gpu_count": 2,
+      "gpu_memory_gb": 80,
+      "network_bandwidth_gbps": 25,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 4.096
+    },
+    {
+      "name": "gpu-xlarge-v1",
+      "vcpus": 64,
+      "memory_gb": 256,
+      "storage_gb": 2000,
+      "gpu_type": "A100",
+      "gpu_count": 4,
+      "gpu_memory_gb": 80,
+      "network_bandwidth_gbps": 50,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 8.192
+    },
+    {
+      "name": "gpu-inference-v1",
+      "vcpus": 4,
+      "memory_gb": 16,
+      "storage_gb": 100,
+      "gpu_type": "T4",
+      "gpu_count": 1,
+      "gpu_memory_gb": 16,
+      "network_bandwidth_gbps": 5,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.35
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "continent": "South America",
+  "regions": [
+    {
+      "name": "sa-east-1",
+      "display_name": "South America (Sao Paulo)",
+      "country": "Brazil",
+      "latitude": -23.5505,
+      "longitude": -46.6333,
+      "availability_zones": [
+        "sa-east-1a",
+        "sa-east-1b"
+      ],
+      "status": "active",
+      "launched": "2022-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "LGPD"
+      ]
+    },
+    {
+      "name": "sa-east-2",
+      "display_name": "South America (Santiago)",
+      "country": "Chile",
+      "latitude": -33.4489,
+      "longitude": -70.6693,
+      "availability_zones": [
+        "sa-east-2a",
+        "sa-east-2b"
+      ],
+      "status": "active",
+      "launched": "2024-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2"
+      ]
+    }
+  ]
+}

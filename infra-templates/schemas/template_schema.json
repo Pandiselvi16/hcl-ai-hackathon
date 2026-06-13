@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Infrastructure Template",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "version",
+    "category",
+    "status"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "compute",
+        "kubernetes",
+        "storage",
+        "network",
+        "composite"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "draft"
+      ]
+    }
+  }
+}

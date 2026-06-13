@@ -1,0 +1,61 @@
+disaster_recovery_plans:
+  - name: dr-standard
+    description: Standard DR plan for non-critical workloads
+    rpo_hours: 24
+    rto_hours: 4
+    tier: standard
+    components:
+      - type: vm
+        backup_policy: vm-daily-30d
+        recovery_strategy: restore-from-snapshot
+      - type: database
+        backup_policy: db-daily-30d
+        recovery_strategy: restore-from-backup
+      - type: storage
+        backup_policy: object-versioning
+        recovery_strategy: version-rollback
+    status: active
+
+  - name: dr-business-critical
+    description: DR plan for business-critical applications
+    rpo_hours: 1
+    rto_hours: 1
+    tier: premium
+    components:
+      - type: vm
+        backup_policy: vm-hourly-48h
+        recovery_strategy: hot-standby
+      - type: database
+        backup_policy: db-continuous-pitr
+        recovery_strategy: point-in-time-recovery
+      - type: storage
+        backup_policy: object-cross-region
+        recovery_strategy: failover-to-replica
+    failover:
+      automatic: true
+      health_check_interval_seconds: 30
+      failover_threshold: 3
+    status: active
+
+  - name: dr-mission-critical
+    description: DR plan for mission-critical systems with zero data loss
+    rpo_hours: 0
+    rto_minutes: 15
+    tier: enterprise
+    components:
+      - type: database
+        backup_policy: db-continuous-pitr
+        recovery_strategy: synchronous-replication
+      - type: vm
+        recovery_strategy: active-active
+        multi_region: true
+      - type: networking
+        recovery_strategy: global-load-balancer-failover
+    failover:
+      automatic: true
+      health_check_interval_seconds: 10
+      failover_threshold: 2
+    regions:
+      primary: us-east-1
+      secondary: us-west-1
+    status: active

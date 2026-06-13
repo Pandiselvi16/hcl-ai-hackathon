@@ -1,0 +1,52 @@
+category: kubernetes-backups
+description: Backup policies for Kubernetes clusters
+policies:
+  - name: k8s-velero-daily
+    description: Daily Kubernetes cluster backup using Velero
+    resource_type: kubernetes
+    tool: velero
+    schedule:
+      frequency: daily
+      time: "01:00"
+      timezone: UTC
+    scope:
+      namespaces: ["*"]
+      exclude_namespaces: ["kube-system", "kube-public"]
+      include_resources: ["deployments", "services", "configmaps", "secrets", "persistentvolumeclaims"]
+    retention:
+      count: 14
+      unit: days
+    storage:
+      bucket: k8s-backups
+      tier: standard
+    encryption: true
+    status: active
+
+  - name: k8s-etcd-snapshot
+    description: etcd snapshot backup for cluster state
+    resource_type: kubernetes-etcd
+    schedule:
+      frequency: "every-6-hours"
+    retention:
+      count: 28
+      unit: snapshots
+    storage:
+      bucket: etcd-backups
+      tier: standard-ssd
+    encryption: true
+    status: active
+
+  - name: k8s-pv-backup
+    description: Persistent volume backup for stateful workloads
+    resource_type: kubernetes-pv
+    tool: velero
+    schedule:
+      frequency: daily
+      time: "02:00"
+      timezone: UTC
+    scope:
+      storage_classes: ["premium-ssd", "standard-ssd"]
+    retention:
+      count: 30
+      unit: days
+    status: active

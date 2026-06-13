@@ -1,0 +1,50 @@
+category: storage
+description: Storage addons for persistent data in Kubernetes
+addons:
+  - name: csi-driver-nfs
+    version: "4.6.0"
+    description: NFS CSI driver for Kubernetes
+    namespace: kube-system
+    helm_chart: csi-driver-nfs/csi-driver-nfs
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "128Mi"
+    dependencies: []
+
+  - name: longhorn
+    version: "1.6.0"
+    description: Cloud-native distributed storage
+    namespace: longhorn-system
+    helm_chart: longhorn/longhorn
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "500m"
+      memory: "1Gi"
+    dependencies: []
+
+  - name: rook-ceph
+    version: "1.14.0"
+    description: Ceph storage orchestrator for Kubernetes
+    namespace: rook-ceph
+    helm_chart: rook-release/rook-ceph
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "1000m"
+      memory: "2Gi"
+    dependencies: []
+
+  - name: velero
+    version: "6.0.0"
+    description: Backup and disaster recovery for Kubernetes
+    namespace: velero
+    helm_chart: vmware-tanzu/velero
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies: []

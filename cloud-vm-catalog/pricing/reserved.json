@@ -1,0 +1,67 @@
+{
+  "pricing_model": "reserved",
+  "currency": "USD",
+  "commitment_terms": [
+    "1-year",
+    "3-year"
+  ],
+  "last_updated": "2026-05-01",
+  "prices": [
+    {
+      "instance_type": "gp-small-v1",
+      "term": "1-year",
+      "price_per_hour": 0.033,
+      "discount_pct": 36,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "gp-small-v1",
+      "term": "3-year",
+      "price_per_hour": 0.021,
+      "discount_pct": 60,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "gp-medium-v1",
+      "term": "1-year",
+      "price_per_hour": 0.066,
+      "discount_pct": 36,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "gp-medium-v1",
+      "term": "3-year",
+      "price_per_hour": 0.042,
+      "discount_pct": 60,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "gp-large-v1",
+      "term": "1-year",
+      "price_per_hour": 0.133,
+      "discount_pct": 36,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "gp-large-v1",
+      "term": "3-year",
+      "price_per_hour": 0.083,
+      "discount_pct": 60,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "co-small-v1",
+      "term": "1-year",
+      "price_per_hour": 0.054,
+      "discount_pct": 36,
+      "upfront_usd": 0
+    },
+    {
+      "instance_type": "co-medium-v1",
+      "term": "1-year",
+      "price_per_hour": 0.109,
+      "discount_pct": 36,
+      "upfront_usd": 0
+    }
+  ]
+}

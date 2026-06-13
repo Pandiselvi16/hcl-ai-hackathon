@@ -1,0 +1,41 @@
+category: dns
+description: DNS zone management and services
+zones:
+  - name: cloud-platform.internal
+    type: private
+    description: Internal DNS for cloud platform services
+    records_count: 245
+    ttl_default: 300
+    status: active
+
+  - name: api.cloud-platform.com
+    type: public
+    description: Public API endpoints
+    records_count: 38
+    ttl_default: 60
+    dnssec_enabled: true
+    status: active
+
+  - name: cdn.cloud-platform.com
+    type: public
+    description: CDN and content delivery endpoints
+    records_count: 120
+    ttl_default: 30
+    geo_routing: true
+    status: active
+
+dns_services:
+  - name: dns-standard
+    description: Standard DNS resolution
+    query_price_per_million_usd: 0.40
+    hosted_zone_price_per_month_usd: 0.50
+    status: active
+
+  - name: dns-premium
+    description: Premium DNS with low latency and geo-routing
+    query_price_per_million_usd: 0.60
+    hosted_zone_price_per_month_usd: 1.00
+    geo_routing: true
+    health_checks: true
+    failover: true
+    status: active

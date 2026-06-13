@@ -1,0 +1,29 @@
+category: storage
+description: Storage services for persistent data
+services:
+  - name: block-storage
+    description: High-performance block storage for VMs
+    catalog_ref: cloud-storage-catalog
+    tiers: ["standard-hdd", "standard-ssd", "premium-ssd", "ultra-ssd", "premium-ssd-v2"]
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: object-storage
+    description: Scalable object storage
+    catalog_ref: cloud-storage-catalog
+    tiers: ["standard", "infrequent-access", "archive", "deep-archive", "intelligent-tiering"]
+    sla_durability: "99.999999999%"
+    status: active
+
+  - name: file-storage
+    description: Managed file systems
+    catalog_ref: cloud-storage-catalog
+    protocols: ["NFSv4", "SMB 3.0"]
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: backup-service
+    description: Automated backup and recovery
+    catalog_ref: cloud-backup-policies
+    supported_resources: ["vm", "database", "file-storage", "kubernetes"]
+    status: active

@@ -1,0 +1,42 @@
+category: networking
+description: Network services for connectivity and traffic management
+services:
+  - name: virtual-private-cloud
+    description: Isolated virtual network
+    catalog_ref: network-service-catalog
+    sla_availability_pct: 99.99
+    regions: all
+    status: active
+
+  - name: load-balancing
+    description: Application and network load balancing
+    catalog_ref: network-service-catalog
+    types: ["application-lb", "network-lb", "internal-lb"]
+    sla_availability_pct: 99.99
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1"]
+    status: active
+
+  - name: cdn
+    description: Content delivery network
+    edge_locations: 9
+    sla_availability_pct: 99.9
+    status: active
+
+  - name: dns-service
+    description: Managed DNS resolution
+    catalog_ref: network-service-catalog
+    sla_availability_pct: 100
+    status: active
+
+  - name: vpn-connectivity
+    description: VPN and WAN connectivity
+    catalog_ref: network-service-catalog
+    types: ["site-to-site-vpn", "client-vpn", "cloud-wan"]
+    sla_availability_pct: 99.95
+    status: active
+
+  - name: private-link
+    description: Private connectivity to cloud services
+    catalog_ref: network-service-catalog
+    sla_availability_pct: 99.99
+    status: active

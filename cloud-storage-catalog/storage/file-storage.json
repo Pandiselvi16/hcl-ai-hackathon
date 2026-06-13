@@ -1,0 +1,56 @@
+{
+  "category": "file-storage",
+  "description": "Managed file systems for shared access across VMs",
+  "tiers": [
+    {
+      "name": "nfs-standard",
+      "protocol": "NFSv4",
+      "max_iops": 35000,
+      "max_throughput_mbps": 1024,
+      "min_size_gb": 100,
+      "max_size_tb": 100,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.3,
+      "status": "active"
+    },
+    {
+      "name": "nfs-premium",
+      "protocol": "NFSv4",
+      "max_iops": 100000,
+      "max_throughput_mbps": 4096,
+      "min_size_gb": 100,
+      "max_size_tb": 100,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.6,
+      "status": "active"
+    },
+    {
+      "name": "smb-standard",
+      "protocol": "SMB 3.0",
+      "max_iops": 10000,
+      "max_throughput_mbps": 300,
+      "min_size_gb": 100,
+      "max_size_tb": 100,
+      "replication": "zone",
+      "encryption": true,
+      "ad_integration": true,
+      "price_per_gb_month_usd": 0.06,
+      "status": "active"
+    },
+    {
+      "name": "smb-premium",
+      "protocol": "SMB 3.0",
+      "max_iops": 40000,
+      "max_throughput_mbps": 1024,
+      "min_size_gb": 100,
+      "max_size_tb": 100,
+      "replication": "zone",
+      "encryption": true,
+      "ad_integration": true,
+      "price_per_gb_month_usd": 0.16,
+      "status": "active"
+    }
+  ]
+}

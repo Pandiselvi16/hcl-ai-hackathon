@@ -1,0 +1,18 @@
+template:
+  name: storage-basic
+  description: Basic storage setup with block and object storage
+  version: "1.0.0"
+  category: storage
+  parameters:
+    block_storage:
+      tier: standard-ssd
+      size_gb: 100
+      encryption: true
+      snapshots: true
+      snapshot_schedule: daily
+    object_storage:
+      tier: standard
+      versioning: false
+      lifecycle_policy: standard-lifecycle
+      encryption: true
+  status: active

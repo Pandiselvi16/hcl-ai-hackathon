@@ -1,0 +1,49 @@
+{
+  "engine": "Cassandra",
+  "description": "Managed Apache Cassandra wide-column store",
+  "versions": [
+    {
+      "version": "4.1",
+      "status": "active",
+      "features": [
+        "virtual_tables",
+        "audit_logging",
+        "full_query_logging"
+      ]
+    }
+  ],
+  "instance_classes": [
+    {
+      "name": "cass-medium",
+      "vcpus": 4,
+      "memory_gb": 16,
+      "max_storage_gb": 2000,
+      "price_per_hour_usd": 0.21
+    },
+    {
+      "name": "cass-large",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "max_storage_gb": 5000,
+      "price_per_hour_usd": 0.42
+    },
+    {
+      "name": "cass-xlarge",
+      "vcpus": 16,
+      "memory_gb": 64,
+      "max_storage_gb": 10000,
+      "price_per_hour_usd": 0.84
+    }
+  ],
+  "features": {
+    "multi_region": true,
+    "tunable_consistency": true,
+    "encryption_at_rest": true,
+    "automated_backups": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1"
+  ]
+}

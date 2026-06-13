@@ -1,0 +1,25 @@
+{
+  "category": "archive-storage",
+  "description": "Long-term archival storage for compliance and retention",
+  "tiers": [
+    {
+      "name": "cold-archive",
+      "retention_years": 7,
+      "immutable": true,
+      "worm_compliant": true,
+      "retrieval_time_hours": "12-24",
+      "price_per_gb_month_usd": 0.002,
+      "status": "active"
+    },
+    {
+      "name": "compliance-vault",
+      "retention_years": 10,
+      "immutable": true,
+      "worm_compliant": true,
+      "legal_hold": true,
+      "retrieval_time_hours": "24-48",
+      "price_per_gb_month_usd": 0.003,
+      "status": "active"
+    }
+  ]
+}

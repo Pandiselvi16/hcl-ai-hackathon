@@ -1,0 +1,60 @@
+{
+  "category": "object-storage",
+  "description": "Scalable object storage for unstructured data",
+  "tiers": [
+    {
+      "name": "standard",
+      "access_pattern": "frequent",
+      "availability_pct": 99.99,
+      "durability": "99.999999999%",
+      "min_object_size_bytes": 0,
+      "max_object_size_tb": 5,
+      "versioning": true,
+      "lifecycle_policies": true,
+      "price_per_gb_month_usd": 0.023,
+      "status": "active"
+    },
+    {
+      "name": "infrequent-access",
+      "access_pattern": "infrequent",
+      "availability_pct": 99.9,
+      "durability": "99.999999999%",
+      "min_storage_days": 30,
+      "retrieval_fee_per_gb_usd": 0.01,
+      "price_per_gb_month_usd": 0.0125,
+      "status": "active"
+    },
+    {
+      "name": "archive",
+      "access_pattern": "rare",
+      "availability_pct": 99.0,
+      "durability": "99.999999999%",
+      "min_storage_days": 90,
+      "retrieval_fee_per_gb_usd": 0.02,
+      "retrieval_time_hours": "3-5",
+      "price_per_gb_month_usd": 0.004,
+      "status": "active"
+    },
+    {
+      "name": "deep-archive",
+      "access_pattern": "rarely",
+      "availability_pct": 99.0,
+      "durability": "99.999999999%",
+      "min_storage_days": 180,
+      "retrieval_fee_per_gb_usd": 0.05,
+      "retrieval_time_hours": "12-48",
+      "price_per_gb_month_usd": 0.00099,
+      "status": "active"
+    },
+    {
+      "name": "intelligent-tiering",
+      "access_pattern": "auto",
+      "availability_pct": 99.9,
+      "durability": "99.999999999%",
+      "auto_tiering": true,
+      "price_per_gb_month_usd": 0.023,
+      "monitoring_fee_per_1000_objects_usd": 0.0025,
+      "status": "active"
+    }
+  ]
+}

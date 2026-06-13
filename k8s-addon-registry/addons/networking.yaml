@@ -1,0 +1,74 @@
+category: networking
+description: Networking addons for Kubernetes clusters
+addons:
+  - name: calico
+    version: "3.27.0"
+    description: Calico CNI for network policy and pod networking
+    namespace: calico-system
+    helm_chart: projectcalico/tigera-operator
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "250m"
+      memory: "512Mi"
+    dependencies: []
+
+  - name: cilium
+    version: "1.15.0"
+    description: eBPF-based networking, security, and observability
+    namespace: kube-system
+    helm_chart: cilium/cilium
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "300m"
+      memory: "512Mi"
+    dependencies: []
+
+  - name: nginx-ingress
+    version: "4.10.0"
+    description: NGINX Ingress Controller
+    namespace: ingress-nginx
+    helm_chart: ingress-nginx/ingress-nginx
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies: []
+
+  - name: traefik
+    version: "3.0.0"
+    description: Traefik Ingress Controller and reverse proxy
+    namespace: traefik
+    helm_chart: traefik/traefik
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies: []
+
+  - name: external-dns
+    version: "0.14.0"
+    description: Automatic DNS configuration from Kubernetes resources
+    namespace: external-dns
+    helm_chart: external-dns/external-dns
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "128Mi"
+    dependencies: []
+
+  - name: coredns
+    version: "1.11.0"
+    description: CoreDNS for cluster DNS resolution
+    namespace: kube-system
+    helm_chart: coredns/coredns
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "128Mi"
+    dependencies: []

@@ -1,0 +1,30 @@
+category: vpn
+description: VPN connectivity services
+services:
+  - name: site-to-site-vpn
+    description: Encrypted tunnel between cloud VPC and on-premises
+    encryption: IKEv2/IPsec
+    bandwidth_gbps: 1.25
+    max_tunnels_per_connection: 2
+    bgp_support: true
+    price_per_connection_hour_usd: 0.05
+    status: active
+
+  - name: client-vpn
+    description: Remote access VPN for end users
+    encryption: TLS
+    max_concurrent_connections: 25000
+    authentication: ["certificate", "active-directory", "saml"]
+    split_tunnel: true
+    price_per_connection_hour_usd: 0.05
+    status: active
+
+  - name: cloud-wan
+    description: Global wide area network across cloud regions
+    encryption: automatic
+    bandwidth_gbps: 10
+    traffic_engineering: true
+    network_segmentation: true
+    price_per_attachment_hour_usd: 0.05
+    data_transfer_per_gb_usd: 0.02
+    status: active

@@ -1,0 +1,94 @@
+{
+  "pricing_model": "on-demand",
+  "currency": "USD",
+  "billing_interval": "hourly",
+  "last_updated": "2026-05-01",
+  "prices": [
+    {
+      "instance_type": "gp-small-v1",
+      "price_per_hour": 0.052,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1"
+      ]
+    },
+    {
+      "instance_type": "gp-medium-v1",
+      "price_per_hour": 0.104,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1"
+      ]
+    },
+    {
+      "instance_type": "gp-large-v1",
+      "price_per_hour": 0.208,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1"
+      ]
+    },
+    {
+      "instance_type": "co-small-v1",
+      "price_per_hour": 0.085,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1"
+      ]
+    },
+    {
+      "instance_type": "co-medium-v1",
+      "price_per_hour": 0.17,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1"
+      ]
+    },
+    {
+      "instance_type": "gpu-small-v1",
+      "price_per_hour": 0.526,
+      "regions": [
+        "us-east-1",
+        "us-west-1"
+      ]
+    },
+    {
+      "instance_type": "gpu-medium-v1",
+      "price_per_hour": 1.212,
+      "regions": [
+        "us-east-1",
+        "us-west-1"
+      ]
+    },
+    {
+      "instance_type": "arm-small-v1",
+      "price_per_hour": 0.04,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1",
+        "ap-southeast-1"
+      ]
+    },
+    {
+      "instance_type": "arm-medium-v1",
+      "price_per_hour": 0.08,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1",
+        "ap-southeast-1"
+      ]
+    }
+  ]
+}

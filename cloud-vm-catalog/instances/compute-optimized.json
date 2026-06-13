@@ -1,0 +1,81 @@
+{
+  "category": "compute-optimized",
+  "description": "High-performance processors for compute-intensive workloads",
+  "instances": [
+    {
+      "name": "co-small-v1",
+      "vcpus": 4,
+      "memory_gb": 4,
+      "storage_gb": 50,
+      "network_bandwidth_gbps": 2,
+      "max_iops": 5000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.085
+    },
+    {
+      "name": "co-medium-v1",
+      "vcpus": 8,
+      "memory_gb": 8,
+      "storage_gb": 100,
+      "network_bandwidth_gbps": 5,
+      "max_iops": 10000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.17
+    },
+    {
+      "name": "co-large-v1",
+      "vcpus": 16,
+      "memory_gb": 16,
+      "storage_gb": 200,
+      "network_bandwidth_gbps": 10,
+      "max_iops": 20000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.34
+    },
+    {
+      "name": "co-xlarge-v1",
+      "vcpus": 32,
+      "memory_gb": 32,
+      "storage_gb": 500,
+      "network_bandwidth_gbps": 15,
+      "max_iops": 40000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.68
+    },
+    {
+      "name": "co-2xlarge-v1",
+      "vcpus": 64,
+      "memory_gb": 64,
+      "storage_gb": 1000,
+      "network_bandwidth_gbps": 25,
+      "max_iops": 80000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 1.36
+    }
+  ]
+}

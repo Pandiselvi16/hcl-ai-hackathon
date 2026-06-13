@@ -1,0 +1,63 @@
+category: vm-backups
+description: Backup policies for virtual machine instances
+policies:
+  - name: vm-daily-7d
+    description: Daily VM snapshots retained for 7 days
+    resource_type: vm
+    schedule:
+      frequency: daily
+      time: "02:00"
+      timezone: UTC
+    retention:
+      count: 7
+      unit: days
+    snapshot_type: incremental
+    cross_region: false
+    encryption: true
+    status: active
+
+  - name: vm-daily-30d
+    description: Daily VM snapshots retained for 30 days
+    resource_type: vm
+    schedule:
+      frequency: daily
+      time: "02:00"
+      timezone: UTC
+    retention:
+      count: 30
+      unit: days
+    snapshot_type: incremental
+    cross_region: false
+    encryption: true
+    status: active
+
+  - name: vm-hourly-48h
+    description: Hourly VM snapshots for critical workloads
+    resource_type: vm
+    schedule:
+      frequency: hourly
+      interval: 1
+    retention:
+      count: 48
+      unit: hours
+    snapshot_type: incremental
+    cross_region: false
+    encryption: true
+    status: active
+
+  - name: vm-weekly-1y
+    description: Weekly VM snapshots for long-term retention
+    resource_type: vm
+    schedule:
+      frequency: weekly
+      day: sunday
+      time: "04:00"
+      timezone: UTC
+    retention:
+      count: 52
+      unit: weeks
+    snapshot_type: full
+    cross_region: true
+    dr_region: us-west-1
+    encryption: true
+    status: active

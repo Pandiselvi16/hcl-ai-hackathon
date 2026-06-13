@@ -1,0 +1,68 @@
+{
+  "engine": "Redis",
+  "description": "Managed Redis in-memory data store",
+  "versions": [
+    {
+      "version": "7.0",
+      "status": "active",
+      "features": [
+        "streams",
+        "modules",
+        "cluster"
+      ]
+    },
+    {
+      "version": "7.2",
+      "status": "active",
+      "features": [
+        "streams",
+        "modules",
+        "cluster",
+        "functions"
+      ]
+    }
+  ],
+  "instance_classes": [
+    {
+      "name": "cache-small",
+      "vcpus": 2,
+      "memory_gb": 2,
+      "price_per_hour_usd": 0.034
+    },
+    {
+      "name": "cache-medium",
+      "vcpus": 2,
+      "memory_gb": 8,
+      "price_per_hour_usd": 0.068
+    },
+    {
+      "name": "cache-large",
+      "vcpus": 4,
+      "memory_gb": 32,
+      "price_per_hour_usd": 0.272
+    },
+    {
+      "name": "cache-xlarge",
+      "vcpus": 8,
+      "memory_gb": 64,
+      "price_per_hour_usd": 0.544
+    }
+  ],
+  "features": {
+    "cluster_mode": true,
+    "replication": true,
+    "persistence": true,
+    "encryption_at_rest": true,
+    "encryption_in_transit": true,
+    "multi_az": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1",
+    "eu-central-1",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-northeast-1"
+  ]
+}

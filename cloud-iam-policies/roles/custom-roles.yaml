@@ -1,0 +1,55 @@
+category: custom-roles
+description: Custom roles for specific use cases
+roles:
+  - name: ci-cd-deployer
+    display_name: CI/CD Deployer
+    description: Minimal permissions for CI/CD pipeline deployments
+    scope: project
+    permissions:
+      - "compute.instances.create"
+      - "compute.instances.delete"
+      - "compute.instances.get"
+      - "compute.instances.list"
+      - "kubernetes.deployments.create"
+      - "kubernetes.deployments.update"
+      - "kubernetes.services.create"
+      - "kubernetes.services.update"
+      - "storage.objects.create"
+      - "storage.objects.get"
+      - "container.images.push"
+      - "container.images.pull"
+    status: active
+
+  - name: data-scientist
+    display_name: Data Scientist
+    description: Access to ML and data resources
+    scope: project
+    permissions:
+      - "compute.instances.create"
+      - "compute.instances.get"
+      - "compute.instances.list"
+      - "storage.buckets.get"
+      - "storage.objects.*"
+      - "ml.models.*"
+      - "ml.experiments.*"
+      - "ml.notebooks.*"
+      - "database.instances.get"
+      - "database.instances.list"
+    status: active
+
+  - name: incident-responder
+    display_name: Incident Responder
+    description: Emergency access for incident response
+    scope: organization
+    permissions:
+      - "compute.instances.*"
+      - "networking.firewalls.*"
+      - "monitoring.*"
+      - "logging.*"
+      - "database.instances.get"
+      - "database.instances.list"
+      - "database.instances.restart"
+    time_limited: true
+    max_duration_hours: 4
+    requires_approval: true
+    status: active

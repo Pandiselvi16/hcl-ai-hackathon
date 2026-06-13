@@ -1,0 +1,68 @@
+{
+  "families": [
+    {
+      "code": "gp",
+      "name": "General Purpose",
+      "description": "Balanced resources for diverse workloads",
+      "use_cases": [
+        "web servers",
+        "app servers",
+        "small databases",
+        "dev environments"
+      ]
+    },
+    {
+      "code": "co",
+      "name": "Compute Optimized",
+      "description": "High CPU-to-memory ratio",
+      "use_cases": [
+        "batch processing",
+        "HPC",
+        "gaming servers",
+        "scientific modeling"
+      ]
+    },
+    {
+      "code": "mo",
+      "name": "Memory Optimized",
+      "description": "High memory-to-CPU ratio",
+      "use_cases": [
+        "in-memory databases",
+        "real-time analytics",
+        "large caches"
+      ]
+    },
+    {
+      "code": "gpu",
+      "name": "GPU Accelerated",
+      "description": "NVIDIA GPU instances",
+      "use_cases": [
+        "machine learning",
+        "deep learning",
+        "video encoding",
+        "3D rendering"
+      ]
+    },
+    {
+      "code": "arm",
+      "name": "ARM Based",
+      "description": "Energy-efficient ARM processors",
+      "use_cases": [
+        "microservices",
+        "containerized apps",
+        "web servers",
+        "CI/CD"
+      ]
+    },
+    {
+      "code": "hs",
+      "name": "High Storage",
+      "description": "NVMe SSD optimized",
+      "use_cases": [
+        "data warehousing",
+        "log processing",
+        "distributed file systems"
+      ]
+    }
+  ]
+}

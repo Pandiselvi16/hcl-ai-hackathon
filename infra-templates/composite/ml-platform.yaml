@@ -1,0 +1,39 @@
+template:
+  name: ml-platform
+  description: Machine learning platform template
+  version: "1.0.0"
+  category: composite
+  components:
+    - name: networking
+      template_ref: vpc-standard
+    - name: training-cluster
+      template_ref: vm-gpu
+      count: 4
+      overrides:
+        instance_type: gpu-large-v1
+    - name: inference-cluster
+      template_ref: k8s-production
+      overrides:
+        worker_nodes:
+          - pool_name: inference
+            instance_type: gpu-inference-v1
+            min_count: 2
+            max_count: 8
+    - name: model-storage
+      type: object-storage
+      parameters:
+        tier: standard
+        versioning: true
+    - name: feature-store
+      type: managed-database
+      parameters:
+        engine: redis
+        version: "7.2"
+        instance_class: cache-xlarge
+    - name: metadata-db
+      type: managed-database
+      parameters:
+        engine: postgres
+        version: "17"
+        instance_class: db-medium
+  status: active

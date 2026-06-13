@@ -1,0 +1,36 @@
+category: devops
+description: DevOps and developer services
+services:
+  - name: container-registry
+    description: Managed container image registry
+    catalog_ref: container-image-catalog
+    features: ["vulnerability-scanning", "image-signing", "replication", "lifecycle-policies"]
+    sla_availability_pct: 99.9
+    status: active
+
+  - name: ci-cd-pipeline
+    description: Managed CI/CD pipeline service
+    features: ["source-integration", "build", "test", "deploy", "approvals"]
+    supported_sources: ["github", "gitlab", "bitbucket", "codecommit"]
+    sla_availability_pct: 99.9
+    status: active
+
+  - name: artifact-repository
+    description: Package and artifact storage
+    supported_formats: ["maven", "npm", "pip", "nuget", "docker", "helm"]
+    sla_availability_pct: 99.9
+    status: active
+
+  - name: infrastructure-as-code
+    description: Managed IaC execution service
+    catalog_ref: infra-templates
+    supported_tools: ["terraform", "cloudformation", "pulumi"]
+    sla_availability_pct: 99.9
+    status: active
+
+  - name: monitoring
+    description: Monitoring and observability platform
+    catalog_ref: monitoring-service-registry
+    features: ["metrics", "logs", "traces", "alerts", "dashboards"]
+    sla_availability_pct: 99.95
+    status: active

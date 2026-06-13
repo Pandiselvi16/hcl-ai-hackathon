@@ -1,0 +1,54 @@
+{
+  "category": "high-storage",
+  "description": "Storage-optimized instances for data-intensive workloads",
+  "instances": [
+    {
+      "name": "hs-medium-v1",
+      "vcpus": 4,
+      "memory_gb": 16,
+      "storage_gb": 2000,
+      "storage_type": "NVMe SSD",
+      "network_bandwidth_gbps": 5,
+      "max_iops": 100000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.23
+    },
+    {
+      "name": "hs-large-v1",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "storage_gb": 5000,
+      "storage_type": "NVMe SSD",
+      "network_bandwidth_gbps": 10,
+      "max_iops": 200000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.46
+    },
+    {
+      "name": "hs-xlarge-v1",
+      "vcpus": 16,
+      "memory_gb": 64,
+      "storage_gb": 10000,
+      "storage_type": "NVMe SSD",
+      "network_bandwidth_gbps": 25,
+      "max_iops": 400000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.92
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+scanning:
+  provider: trivy
+  version: "0.50.0"
+  schedule: "0 2 * * *"  # daily at 2 AM
+  databases:
+    - name: NVD
+      update_frequency: daily
+    - name: GHSA
+      update_frequency: daily
+  ignore_unfixed: false
+  severity_levels: ["CRITICAL", "HIGH", "MEDIUM", "LOW"]
+  output_formats: ["json", "table"]
+  notifications:
+    critical:
+      channel: slack
+      webhook_env: SLACK_SECURITY_WEBHOOK
+    high:
+      channel: email
+      recipients: ["security-team@cloud-platform.io"]

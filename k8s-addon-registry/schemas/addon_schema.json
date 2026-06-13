@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kubernetes Addon",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "description",
+    "namespace",
+    "helm_chart",
+    "status",
+    "supported_k8s_versions"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]+$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "helm_chart": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "preview",
+        "beta"
+      ]
+    },
+    "supported_k8s_versions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resource_requirements": {
+      "type": "object",
+      "properties": {
+        "cpu": {
+          "type": "string"
+        },
+        "memory": {
+          "type": "string"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

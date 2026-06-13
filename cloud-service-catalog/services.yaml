@@ -1,0 +1,42 @@
+platform: Cloud Platform
+version: "2.0.0"
+last_updated: "2026-06-01"
+description: Master catalog of all cloud platform services
+
+service_categories:
+  - name: compute
+    file: compute/compute-services.yaml
+    service_count: 5
+    status: active
+
+  - name: networking
+    file: networking/network-services.yaml
+    service_count: 6
+    status: active
+
+  - name: storage
+    file: storage/storage-services.yaml
+    service_count: 4
+    status: active
+
+  - name: security
+    file: security/security-services.yaml
+    service_count: 6
+    status: active
+
+  - name: ai
+    file: ai/ai-services.yaml
+    service_count: 4
+    status: active
+
+  - name: analytics
+    file: analytics/analytics-services.yaml
+    service_count: 4
+    status: active
+
+  - name: devops
+    file: devops/devops-services.yaml
+    service_count: 5
+    status: active
+
+total_services: 34

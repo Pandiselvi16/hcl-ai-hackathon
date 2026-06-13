@@ -1,0 +1,27 @@
+{
+  "continent": "Africa",
+  "regions": [
+    {
+      "name": "af-south-1",
+      "display_name": "Africa (Cape Town)",
+      "country": "South Africa",
+      "latitude": -33.9249,
+      "longitude": 18.4241,
+      "availability_zones": [
+        "af-south-1a",
+        "af-south-1b"
+      ],
+      "status": "active",
+      "launched": "2023-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2",
+        "POPIA"
+      ]
+    }
+  ]
+}

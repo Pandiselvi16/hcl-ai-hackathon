@@ -1,0 +1,44 @@
+category: compute
+description: Compute services for running workloads in the cloud
+services:
+  - name: virtual-machines
+    description: Scalable virtual machine instances
+    catalog_ref: cloud-vm-catalog
+    tiers: ["general-purpose", "compute-optimized", "memory-optimized", "gpu", "arm", "high-storage"]
+    sla_availability_pct: 99.99
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1", "ap-northeast-1"]
+    status: active
+
+  - name: kubernetes-engine
+    description: Managed Kubernetes clusters
+    catalog_ref: k8s-addon-registry
+    supported_versions: ["1.27", "1.28", "1.29", "1.30"]
+    sla_availability_pct: 99.95
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1"]
+    status: active
+
+  - name: container-instances
+    description: Serverless container execution
+    image_catalog_ref: container-image-catalog
+    max_vcpus: 4
+    max_memory_gb: 16
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active
+
+  - name: serverless-functions
+    description: Event-driven serverless compute
+    supported_runtimes: ["python3.12", "python3.13", "node20", "node22", "java21", "go1.22", "dotnet8"]
+    max_memory_mb: 10240
+    max_timeout_seconds: 900
+    sla_availability_pct: 99.95
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1"]
+    status: active
+
+  - name: batch-computing
+    description: Managed batch job execution
+    supported_instance_types: ["co-small-v1", "co-medium-v1", "co-large-v1"]
+    max_concurrent_jobs: 10000
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active

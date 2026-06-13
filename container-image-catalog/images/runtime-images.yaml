@@ -1,0 +1,130 @@
+category: runtime
+description: Approved language runtime images
+images:
+  - name: python-3.12
+    registry: registry.cloud-platform.io
+    repository: runtime/python
+    tag: "3.12-slim"
+    base_image: debian-12
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 145
+    packages: ["pip", "setuptools"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 1
+    status: active
+
+  - name: python-3.13
+    registry: registry.cloud-platform.io
+    repository: runtime/python
+    tag: "3.13-slim"
+    base_image: debian-12
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 148
+    packages: ["pip", "setuptools"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: node-20
+    registry: registry.cloud-platform.io
+    repository: runtime/node
+    tag: "20-alpine"
+    base_image: alpine-3.19
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 120
+    packages: ["npm", "yarn"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: node-22
+    registry: registry.cloud-platform.io
+    repository: runtime/node
+    tag: "22-alpine"
+    base_image: alpine-3.19
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 125
+    packages: ["npm", "yarn"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: java-21
+    registry: registry.cloud-platform.io
+    repository: runtime/java
+    tag: "21-jre-slim"
+    base_image: debian-12
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 210
+    packages: ["openjdk-21-jre"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 2
+    status: active
+
+  - name: golang-1.22
+    registry: registry.cloud-platform.io
+    repository: runtime/golang
+    tag: "1.22-alpine"
+    base_image: alpine-3.19
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 260
+    packages: ["go"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: dotnet-8
+    registry: registry.cloud-platform.io
+    repository: runtime/dotnet
+    tag: "8.0-runtime"
+    base_image: debian-12
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 190
+    packages: ["dotnet-runtime-8.0"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 1
+    status: active
+
+  - name: rust-1.77
+    registry: registry.cloud-platform.io
+    repository: runtime/rust
+    tag: "1.77-slim"
+    base_image: debian-12
+    os: linux
+    architecture: ["amd64"]
+    size_mb: 850
+    packages: ["rustc", "cargo"]
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active

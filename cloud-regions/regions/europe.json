@@ -1,0 +1,129 @@
+{
+  "continent": "Europe",
+  "regions": [
+    {
+      "name": "eu-west-1",
+      "display_name": "Europe (Ireland)",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603,
+      "availability_zones": [
+        "eu-west-1a",
+        "eu-west-1b",
+        "eu-west-1c"
+      ],
+      "status": "active",
+      "launched": "2020-03-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "eu-west-2",
+      "display_name": "Europe (London)",
+      "country": "United Kingdom",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "availability_zones": [
+        "eu-west-2a",
+        "eu-west-2b"
+      ],
+      "status": "active",
+      "launched": "2021-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "eu-central-1",
+      "display_name": "Europe (Frankfurt)",
+      "country": "Germany",
+      "latitude": 50.1109,
+      "longitude": 8.6821,
+      "availability_zones": [
+        "eu-central-1a",
+        "eu-central-1b",
+        "eu-central-1c"
+      ],
+      "status": "active",
+      "launched": "2020-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai",
+        "analytics"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR",
+        "ISO27001",
+        "BSI-C5"
+      ]
+    },
+    {
+      "name": "eu-north-1",
+      "display_name": "Europe (Stockholm)",
+      "country": "Sweden",
+      "latitude": 59.3293,
+      "longitude": 18.0686,
+      "availability_zones": [
+        "eu-north-1a",
+        "eu-north-1b"
+      ],
+      "status": "active",
+      "launched": "2022-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "eu-south-1",
+      "display_name": "Europe (Milan)",
+      "country": "Italy",
+      "latitude": 45.4642,
+      "longitude": 9.19,
+      "availability_zones": [
+        "eu-south-1a",
+        "eu-south-1b"
+      ],
+      "status": "active",
+      "launched": "2023-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2",
+        "GDPR"
+      ]
+    }
+  ]
+}

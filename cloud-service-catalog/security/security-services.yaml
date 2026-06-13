@@ -1,0 +1,40 @@
+category: security
+description: Security and compliance services
+services:
+  - name: iam
+    description: Identity and access management
+    catalog_ref: cloud-iam-policies
+    features: ["roles", "policies", "service-accounts", "mfa", "sso"]
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: key-management
+    description: Encryption key management service
+    key_types: ["symmetric", "asymmetric", "hmac"]
+    hsm_backed: true
+    auto_rotation: true
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: secrets-manager
+    description: Secrets storage and rotation
+    features: ["automatic-rotation", "cross-account-access", "audit-logging"]
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: waf
+    description: Web application firewall
+    features: ["managed-rules", "custom-rules", "rate-limiting", "bot-control"]
+    sla_availability_pct: 99.95
+    status: active
+
+  - name: ddos-protection
+    description: DDoS mitigation service
+    tiers: ["standard", "advanced"]
+    sla_availability_pct: 99.99
+    status: active
+
+  - name: vulnerability-scanner
+    description: Infrastructure and container vulnerability scanning
+    scan_targets: ["vm", "container-image", "web-app"]
+    status: active

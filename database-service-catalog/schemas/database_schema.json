@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Database Service",
+  "type": "object",
+  "required": [
+    "engine",
+    "description",
+    "versions",
+    "instance_classes",
+    "features",
+    "regions"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "version",
+          "status"
+        ]
+      }
+    },
+    "instance_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "vcpus",
+          "memory_gb"
+        ]
+      }
+    },
+    "features": {
+      "type": "object"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

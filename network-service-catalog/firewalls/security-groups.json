@@ -1,0 +1,103 @@
+{
+  "category": "security-groups",
+  "description": "Predefined security group configurations",
+  "security_groups": [
+    {
+      "name": "sg-web-public",
+      "description": "Public-facing web servers",
+      "vpc": "default",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 80,
+          "source": "0.0.0.0/0"
+        },
+        {
+          "protocol": "TCP",
+          "port": 443,
+          "source": "0.0.0.0/0"
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "all",
+          "destination": "0.0.0.0/0"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "name": "sg-app-private",
+      "description": "Private application tier",
+      "vpc": "default",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 8080,
+          "source": "sg-web-public"
+        },
+        {
+          "protocol": "TCP",
+          "port": 8443,
+          "source": "sg-web-public"
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "all",
+          "destination": "0.0.0.0/0"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "name": "sg-db-private",
+      "description": "Private database tier",
+      "vpc": "default",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 5432,
+          "source": "sg-app-private"
+        },
+        {
+          "protocol": "TCP",
+          "port": 3306,
+          "source": "sg-app-private"
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "TCP",
+          "port": 443,
+          "destination": "0.0.0.0/0"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "name": "sg-monitoring",
+      "description": "Monitoring and management",
+      "vpc": "default",
+      "inbound": [
+        {
+          "protocol": "TCP",
+          "port": 9090,
+          "source": "10.0.0.0/8"
+        },
+        {
+          "protocol": "TCP",
+          "port": 3000,
+          "source": "10.0.0.0/8"
+        }
+      ],
+      "outbound": [
+        {
+          "protocol": "all",
+          "destination": "0.0.0.0/0"
+        }
+      ],
+      "status": "active"
+    }
+  ]
+}

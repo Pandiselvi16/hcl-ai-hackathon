@@ -1,0 +1,42 @@
+log_pipelines:
+  - name: json-parser
+    description: Parse JSON structured logs
+    stages:
+      - type: json
+        source: log
+      - type: labels
+        values: ["level", "service", "trace_id"]
+      - type: timestamp
+        source: timestamp
+        format: RFC3339
+    status: active
+
+  - name: error-filter
+    description: Filter and route error logs
+    stages:
+      - type: match
+        selector: '{level="error"}'
+      - type: output
+        destination: error-logs-bucket
+    status: active
+
+  - name: pii-redaction
+    description: Redact PII from logs
+    stages:
+      - type: regex
+        expression: '(\d{3}-\d{2}-\d{4})'
+        replace: '***-**-****'
+      - type: regex
+        expression: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+        replace: '***@***.***'
+    status: active
+
+  - name: metric-extraction
+    description: Extract metrics from log lines
+    stages:
+      - type: metrics
+        counter:
+          name: log_lines_total
+          match_all: true
+          labels: ["level"]
+    status: active

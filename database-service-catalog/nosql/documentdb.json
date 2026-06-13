@@ -1,0 +1,54 @@
+{
+  "engine": "DocumentDB",
+  "description": "Managed document database (MongoDB-compatible)",
+  "versions": [
+    {
+      "version": "5.0",
+      "status": "active",
+      "compatibility": "MongoDB 5.0"
+    },
+    {
+      "version": "6.0",
+      "status": "active",
+      "compatibility": "MongoDB 6.0"
+    }
+  ],
+  "instance_classes": [
+    {
+      "name": "doc-small",
+      "vcpus": 2,
+      "memory_gb": 4,
+      "max_storage_gb": 500,
+      "price_per_hour_usd": 0.074
+    },
+    {
+      "name": "doc-medium",
+      "vcpus": 4,
+      "memory_gb": 16,
+      "max_storage_gb": 2000,
+      "price_per_hour_usd": 0.22
+    },
+    {
+      "name": "doc-large",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "max_storage_gb": 5000,
+      "price_per_hour_usd": 0.44
+    }
+  ],
+  "features": {
+    "sharding": true,
+    "change_streams": true,
+    "full_text_search": true,
+    "encryption_at_rest": true,
+    "automated_backups": true,
+    "multi_az": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1",
+    "eu-central-1",
+    "ap-south-1"
+  ]
+}

@@ -1,0 +1,27 @@
+audit_config:
+  enabled: true
+  log_all_admin_activity: true
+  log_data_access: true
+  log_data_write: true
+  retention_days: 365
+  export:
+    - destination: object-storage
+      bucket: audit-logs-bucket
+      format: json
+    - destination: siem
+      endpoint_env: SIEM_ENDPOINT
+      format: cef
+  alerts:
+    - name: unauthorized-access-attempt
+      condition: "failed_authentication_count > 5"
+      window: 5m
+      severity: critical
+      notification: slack-security
+    - name: privilege-escalation
+      condition: "role_change AND target_role == 'admin'"
+      severity: critical
+      notification: pagerduty-critical
+    - name: unusual-resource-deletion
+      condition: "resource_deleted AND time_of_day NOT IN business_hours"
+      severity: warning
+      notification: slack-security

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IAM Role",
+  "type": "object",
+  "required": [
+    "name",
+    "display_name",
+    "description",
+    "scope",
+    "permissions",
+    "status"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]+$"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "organization",
+        "project",
+        "resource"
+      ]
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "preview"
+      ]
+    }
+  }
+}

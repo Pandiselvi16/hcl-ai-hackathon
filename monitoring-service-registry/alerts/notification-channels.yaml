@@ -1,0 +1,30 @@
+notification_channels:
+  - name: slack-infrastructure
+    type: slack
+    channel: "#infra-alerts"
+    severity: ["warning", "critical"]
+    status: active
+
+  - name: slack-application
+    type: slack
+    channel: "#app-alerts"
+    severity: ["warning", "critical"]
+    status: active
+
+  - name: pagerduty-critical
+    type: pagerduty
+    service_key_env: PAGERDUTY_SERVICE_KEY
+    severity: ["critical"]
+    status: active
+
+  - name: email-security
+    type: email
+    recipients: ["security-team@cloud-platform.io"]
+    severity: ["warning", "critical"]
+    status: active
+
+  - name: webhook-custom
+    type: webhook
+    url_env: CUSTOM_WEBHOOK_URL
+    severity: ["critical"]
+    status: active

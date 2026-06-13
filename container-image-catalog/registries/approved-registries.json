@@ -1,0 +1,50 @@
+{
+  "description": "List of approved container registries",
+  "registries": [
+    {
+      "name": "cloud-platform-registry",
+      "url": "registry.cloud-platform.io",
+      "type": "private",
+      "authentication": "iam",
+      "scanning": true,
+      "signing": true,
+      "status": "active"
+    },
+    {
+      "name": "docker-hub",
+      "url": "docker.io",
+      "type": "public",
+      "authentication": "token",
+      "approved_namespaces": [
+        "library",
+        "bitnami"
+      ],
+      "scanning": true,
+      "status": "active"
+    },
+    {
+      "name": "github-container",
+      "url": "ghcr.io",
+      "type": "public",
+      "authentication": "token",
+      "scanning": true,
+      "status": "active"
+    },
+    {
+      "name": "quay",
+      "url": "quay.io",
+      "type": "public",
+      "authentication": "token",
+      "scanning": true,
+      "status": "active"
+    },
+    {
+      "name": "gcr",
+      "url": "gcr.io",
+      "type": "public",
+      "authentication": "service-account",
+      "scanning": true,
+      "status": "restricted"
+    }
+  ]
+}

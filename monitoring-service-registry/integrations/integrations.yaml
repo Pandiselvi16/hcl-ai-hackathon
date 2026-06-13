@@ -1,0 +1,36 @@
+integrations:
+  - name: slack
+    type: notification
+    description: Slack notifications for alerts
+    config_keys: ["webhook_url", "channel"]
+    status: active
+
+  - name: pagerduty
+    type: incident-management
+    description: PagerDuty integration for on-call management
+    config_keys: ["service_key", "escalation_policy"]
+    status: active
+
+  - name: opsgenie
+    type: incident-management
+    description: OpsGenie for alert routing and on-call
+    config_keys: ["api_key", "team"]
+    status: active
+
+  - name: jira
+    type: ticketing
+    description: Jira integration for incident tickets
+    config_keys: ["url", "project_key", "api_token"]
+    status: active
+
+  - name: datadog
+    type: monitoring
+    description: Forward metrics to Datadog
+    config_keys: ["api_key", "app_key"]
+    status: active
+
+  - name: elasticsearch
+    type: log-aggregation
+    description: Forward logs to Elasticsearch
+    config_keys: ["url", "index_pattern", "api_key"]
+    status: active

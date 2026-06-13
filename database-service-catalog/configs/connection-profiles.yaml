@@ -1,0 +1,44 @@
+connection_profiles:
+  - name: web-app-standard
+    description: Standard connection profile for web applications
+    max_connections: 100
+    connection_timeout_ms: 5000
+    idle_timeout_ms: 600000
+    ssl_mode: require
+    pool_size: 20
+    pool_max_overflow: 10
+    retry_attempts: 3
+    retry_delay_ms: 1000
+
+  - name: microservice-standard
+    description: Connection profile for microservices
+    max_connections: 50
+    connection_timeout_ms: 3000
+    idle_timeout_ms: 300000
+    ssl_mode: require
+    pool_size: 10
+    pool_max_overflow: 5
+    retry_attempts: 3
+    retry_delay_ms: 500
+
+  - name: analytics-batch
+    description: Connection profile for batch analytics workloads
+    max_connections: 10
+    connection_timeout_ms: 30000
+    idle_timeout_ms: 3600000
+    ssl_mode: require
+    pool_size: 5
+    pool_max_overflow: 5
+    retry_attempts: 5
+    retry_delay_ms: 5000
+
+  - name: high-performance
+    description: Connection profile for high-throughput applications
+    max_connections: 500
+    connection_timeout_ms: 2000
+    idle_timeout_ms: 120000
+    ssl_mode: require
+    pool_size: 50
+    pool_max_overflow: 50
+    retry_attempts: 2
+    retry_delay_ms: 200

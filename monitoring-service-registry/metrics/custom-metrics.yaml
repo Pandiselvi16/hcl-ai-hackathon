@@ -1,0 +1,44 @@
+custom_metrics:
+  - name: http_request_duration_seconds
+    type: histogram
+    description: HTTP request latency in seconds
+    labels: ["method", "path", "status_code"]
+    buckets: [0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10.0]
+    status: active
+
+  - name: http_requests_total
+    type: counter
+    description: Total number of HTTP requests
+    labels: ["method", "path", "status_code"]
+    status: active
+
+  - name: active_connections
+    type: gauge
+    description: Number of active connections
+    labels: ["service"]
+    status: active
+
+  - name: queue_depth
+    type: gauge
+    description: Number of messages in the queue
+    labels: ["queue_name"]
+    status: active
+
+  - name: database_query_duration_seconds
+    type: histogram
+    description: Database query execution time
+    labels: ["engine", "operation"]
+    buckets: [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1.0, 5.0]
+    status: active
+
+  - name: cache_hit_ratio
+    type: gauge
+    description: Cache hit ratio percentage
+    labels: ["cache_name"]
+    status: active
+
+  - name: error_rate
+    type: gauge
+    description: Error rate percentage over 5-minute window
+    labels: ["service", "error_type"]
+    status: active

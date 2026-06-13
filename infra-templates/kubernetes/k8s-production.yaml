@@ -1,0 +1,55 @@
+template:
+  name: k8s-production
+  description: Production-grade Kubernetes cluster with HA
+  version: "1.0.0"
+  category: kubernetes
+  parameters:
+    k8s_version: "1.30"
+    control_plane:
+      instance_type: gp-large-v1
+      count: 3
+      multi_az: true
+    worker_nodes:
+      - pool_name: general
+        instance_type: gp-large-v1
+        min_count: 3
+        max_count: 20
+        auto_scaling: true
+        labels:
+          workload-type: general
+      - pool_name: memory-optimized
+        instance_type: mo-large-v1
+        min_count: 2
+        max_count: 10
+        auto_scaling: true
+        labels:
+          workload-type: memory-intensive
+    networking:
+      vpc: production
+      pod_cidr: "10.244.0.0/16"
+      service_cidr: "10.96.0.0/12"
+      cni: cilium
+      network_policy: true
+    addons:
+      - nginx-ingress
+      - cert-manager
+      - prometheus-stack
+      - grafana-loki
+      - falco
+      - kyverno
+      - velero
+      - external-dns
+    storage:
+      default_storage_class: premium-ssd
+    security:
+      pod_security_standards: restricted
+      secrets_encryption: true
+      audit_logging: true
+  monitoring:
+    enabled: true
+    alert_profile: k8s-production
+  backup:
+    enabled: true
+    schedule: "every-6-hours"
+    retention_days: 30
+  status: active

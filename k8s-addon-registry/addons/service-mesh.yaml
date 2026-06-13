@@ -1,0 +1,27 @@
+category: service-mesh
+description: Service mesh addons for traffic management and observability
+addons:
+  - name: istio
+    version: "1.21.0"
+    description: Istio service mesh for traffic management and security
+    namespace: istio-system
+    helm_chart: istio/istiod
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "500m"
+      memory: "1Gi"
+    dependencies: []
+
+  - name: linkerd
+    version: "2.15.0"
+    description: Ultra-lightweight service mesh
+    namespace: linkerd
+    helm_chart: linkerd/linkerd-control-plane
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies:
+      - cert-manager

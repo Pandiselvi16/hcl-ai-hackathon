@@ -1,0 +1,77 @@
+{
+  "description": "Edge and CDN locations for low-latency content delivery",
+  "edge_locations": [
+    {
+      "name": "edge-us-nyc",
+      "city": "New York",
+      "country": "US",
+      "parent_region": "us-east-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-us-lax",
+      "city": "Los Angeles",
+      "country": "US",
+      "parent_region": "us-west-2",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-us-chi",
+      "city": "Chicago",
+      "country": "US",
+      "parent_region": "us-central-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-eu-ldn",
+      "city": "London",
+      "country": "UK",
+      "parent_region": "eu-west-2",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-eu-par",
+      "city": "Paris",
+      "country": "France",
+      "parent_region": "eu-west-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-ap-tky",
+      "city": "Tokyo",
+      "country": "Japan",
+      "parent_region": "ap-northeast-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-ap-sgp",
+      "city": "Singapore",
+      "country": "Singapore",
+      "parent_region": "ap-southeast-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-ap-mum",
+      "city": "Mumbai",
+      "country": "India",
+      "parent_region": "ap-south-1",
+      "type": "cdn",
+      "status": "active"
+    },
+    {
+      "name": "edge-sa-gru",
+      "city": "Sao Paulo",
+      "country": "Brazil",
+      "parent_region": "sa-east-1",
+      "type": "cdn",
+      "status": "active"
+    }
+  ]
+}

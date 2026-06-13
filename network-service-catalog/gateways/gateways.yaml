@@ -1,0 +1,58 @@
+category: gateways
+description: Network gateway services
+services:
+  - name: internet-gateway
+    description: Connects VPC to the internet
+    type: internet
+    high_availability: true
+    bandwidth_limit: null
+    price_per_hour_usd: 0.0
+    status: active
+
+  - name: nat-gateway
+    description: Enables outbound internet for private subnets
+    type: nat
+    high_availability: true
+    bandwidth_gbps: 45
+    price_per_hour_usd: 0.045
+    data_processing_per_gb_usd: 0.045
+    status: active
+
+  - name: vpn-gateway
+    description: Site-to-site VPN connectivity
+    type: vpn
+    encryption: ["IKEv2", "IPsec"]
+    max_tunnels: 10
+    bandwidth_gbps: 1.25
+    price_per_hour_usd: 0.05
+    status: active
+
+  - name: transit-gateway
+    description: Hub for VPC-to-VPC and on-premises connectivity
+    type: transit
+    max_attachments: 5000
+    max_routes: 10000
+    bandwidth_gbps: 50
+    multicast_support: true
+    price_per_attachment_hour_usd: 0.05
+    data_processing_per_gb_usd: 0.02
+    status: active
+
+  - name: api-gateway
+    description: Managed API gateway for REST and WebSocket APIs
+    type: api
+    protocol_support: ["REST", "WebSocket", "HTTP"]
+    throttling: true
+    caching: true
+    max_requests_per_sec: 10000
+    price_per_million_requests_usd: 3.50
+    status: active
+
+  - name: private-link-gateway
+    description: Private connectivity to services without internet exposure
+    type: private-link
+    cross_account: true
+    cross_region: false
+    price_per_hour_usd: 0.01
+    data_processing_per_gb_usd: 0.01
+    status: active

@@ -1,0 +1,95 @@
+{
+  "description": "Resource-level access control policies",
+  "policies": [
+    {
+      "name": "vm-access-policy",
+      "description": "VM access controls",
+      "resource_type": "compute.instance",
+      "rules": [
+        {
+          "action": "start",
+          "roles": [
+            "compute-admin",
+            "admin"
+          ]
+        },
+        {
+          "action": "stop",
+          "roles": [
+            "compute-admin",
+            "admin"
+          ]
+        },
+        {
+          "action": "delete",
+          "roles": [
+            "admin"
+          ],
+          "require_approval": true
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "name": "database-access-policy",
+      "description": "Database access controls",
+      "resource_type": "database.instance",
+      "rules": [
+        {
+          "action": "create",
+          "roles": [
+            "database-admin",
+            "admin"
+          ]
+        },
+        {
+          "action": "delete",
+          "roles": [
+            "admin"
+          ],
+          "require_approval": true
+        },
+        {
+          "action": "backup",
+          "roles": [
+            "database-admin",
+            "admin"
+          ]
+        },
+        {
+          "action": "restore",
+          "roles": [
+            "database-admin",
+            "admin"
+          ],
+          "require_approval": true
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "name": "network-access-policy",
+      "description": "Network resource access controls",
+      "resource_type": "networking.*",
+      "rules": [
+        {
+          "action": "modify-firewall",
+          "roles": [
+            "network-admin",
+            "security-admin",
+            "admin"
+          ]
+        },
+        {
+          "action": "create-vpn",
+          "roles": [
+            "network-admin",
+            "admin"
+          ],
+          "require_approval": true
+        }
+      ],
+      "status": "active"
+    }
+  ]
+}

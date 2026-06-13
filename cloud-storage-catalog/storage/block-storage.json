@@ -1,0 +1,66 @@
+{
+  "category": "block-storage",
+  "description": "High-performance block storage volumes for VMs",
+  "tiers": [
+    {
+      "name": "standard-hdd",
+      "type": "HDD",
+      "max_iops": 500,
+      "max_throughput_mbps": 60,
+      "min_size_gb": 10,
+      "max_size_gb": 16000,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.04,
+      "status": "active"
+    },
+    {
+      "name": "standard-ssd",
+      "type": "SSD",
+      "max_iops": 3000,
+      "max_throughput_mbps": 125,
+      "min_size_gb": 10,
+      "max_size_gb": 16000,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.08,
+      "status": "active"
+    },
+    {
+      "name": "premium-ssd",
+      "type": "SSD",
+      "max_iops": 20000,
+      "max_throughput_mbps": 750,
+      "min_size_gb": 10,
+      "max_size_gb": 32000,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.17,
+      "status": "active"
+    },
+    {
+      "name": "ultra-ssd",
+      "type": "NVMe SSD",
+      "max_iops": 160000,
+      "max_throughput_mbps": 2000,
+      "min_size_gb": 10,
+      "max_size_gb": 64000,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.3,
+      "status": "active"
+    },
+    {
+      "name": "premium-ssd-v2",
+      "type": "SSD",
+      "max_iops": 80000,
+      "max_throughput_mbps": 1200,
+      "min_size_gb": 1,
+      "max_size_gb": 64000,
+      "replication": "zone",
+      "encryption": true,
+      "price_per_gb_month_usd": 0.22,
+      "status": "active"
+    }
+  ]
+}

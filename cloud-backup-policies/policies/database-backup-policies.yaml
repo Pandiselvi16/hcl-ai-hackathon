@@ -1,0 +1,69 @@
+category: database-backups
+description: Backup policies for managed database services
+policies:
+  - name: db-continuous-pitr
+    description: Continuous backup with point-in-time recovery
+    resource_type: database
+    engines: ["postgres", "mysql", "mariadb"]
+    schedule:
+      frequency: continuous
+      wal_archiving: true
+    retention:
+      pitr_window_days: 35
+      full_backup_retention_days: 90
+    cross_region: false
+    encryption: true
+    status: active
+
+  - name: db-daily-30d
+    description: Daily automated database backups
+    resource_type: database
+    engines: ["postgres", "mysql", "mariadb", "documentdb"]
+    schedule:
+      frequency: daily
+      time: "03:00"
+      timezone: UTC
+      backup_window_hours: 2
+    retention:
+      count: 30
+      unit: days
+    cross_region: false
+    encryption: true
+    status: active
+
+  - name: db-cross-region-dr
+    description: Cross-region database backup for disaster recovery
+    resource_type: database
+    engines: ["postgres", "mysql"]
+    schedule:
+      frequency: daily
+      time: "04:00"
+      timezone: UTC
+    retention:
+      count: 90
+      unit: days
+    cross_region: true
+    dr_regions:
+      - from: us-east-1
+        to: us-west-1
+      - from: eu-west-1
+        to: eu-central-1
+      - from: ap-south-1
+        to: ap-southeast-1
+    encryption: true
+    status: active
+
+  - name: db-nosql-daily
+    description: Daily NoSQL database backups
+    resource_type: database
+    engines: ["redis", "cassandra", "dynamodb"]
+    schedule:
+      frequency: daily
+      time: "03:00"
+      timezone: UTC
+    retention:
+      count: 14
+      unit: days
+    cross_region: false
+    encryption: true
+    status: active

@@ -1,0 +1,30 @@
+template:
+  name: vpc-advanced
+  description: Advanced VPC with peering and transit gateway
+  version: "1.0.0"
+  category: network
+  parameters:
+    vpc:
+      cidr: "10.0.0.0/16"
+      template: standard-3tier
+    internet_gateway: true
+    nat_gateway: true
+    transit_gateway:
+      enabled: true
+      attachments:
+        - name: shared-services
+          vpc_cidr: "10.1.0.0/16"
+        - name: database
+          vpc_cidr: "10.2.0.0/16"
+    vpn:
+      enabled: true
+      type: site-to-site-vpn
+      remote_gateway: ""
+    dns:
+      private_zone: true
+      zone_name: "internal.cloud-platform.io"
+    security:
+      flow_logs: true
+      network_acls: true
+      waf: true
+  status: active

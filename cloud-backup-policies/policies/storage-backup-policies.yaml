@@ -1,0 +1,49 @@
+category: storage-backups
+description: Backup policies for storage services
+policies:
+  - name: object-versioning
+    description: Object storage versioning for data protection
+    resource_type: object-storage
+    versioning: true
+    lifecycle:
+      noncurrent_expiration_days: 90
+      delete_marker_cleanup_days: 7
+    cross_region_replication: false
+    status: active
+
+  - name: object-cross-region
+    description: Cross-region replication for object storage
+    resource_type: object-storage
+    versioning: true
+    cross_region_replication: true
+    replication_rules:
+      - from: us-east-1
+        to: us-west-1
+        filter_prefix: "critical/"
+      - from: eu-west-1
+        to: eu-central-1
+    status: active
+
+  - name: file-storage-snapshot
+    description: File storage snapshot policy
+    resource_type: file-storage
+    schedule:
+      frequency: daily
+      time: "02:00"
+      timezone: UTC
+    retention:
+      count: 14
+      unit: days
+    encryption: true
+    status: active
+
+  - name: block-storage-snapshot
+    description: Block storage volume snapshot policy
+    resource_type: block-storage
+    schedule:
+      frequency: "every-6-hours"
+    retention:
+      count: 28
+      unit: snapshots
+    encryption: true
+    status: active

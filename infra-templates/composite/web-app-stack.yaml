@@ -1,0 +1,45 @@
+template:
+  name: web-app-stack
+  description: Complete 3-tier web application stack
+  version: "1.0.0"
+  category: composite
+  components:
+    - name: networking
+      template_ref: vpc-standard
+      overrides:
+        vpc.cidr: "10.0.0.0/16"
+    - name: web-tier
+      template_ref: vm-medium
+      count: 2
+      overrides:
+        networking.subnet: public
+        networking.security_group: sg-web-public
+        networking.public_ip: true
+    - name: app-tier
+      template_ref: vm-large
+      count: 3
+      overrides:
+        networking.subnet: private
+        networking.security_group: sg-app-private
+    - name: database
+      type: managed-database
+      parameters:
+        engine: postgres
+        version: "17"
+        instance_class: db-large
+        multi_az: true
+        storage_gb: 500
+    - name: cache
+      type: managed-cache
+      parameters:
+        engine: redis
+        version: "7.2"
+        instance_class: cache-medium
+    - name: load-balancer
+      type: application-lb
+      profile: web-standard
+  monitoring:
+    enabled: true
+    dashboard: application-performance
+    alert_rules: ["high-error-rate", "high-latency-p99", "high-cpu-usage"]
+  status: active

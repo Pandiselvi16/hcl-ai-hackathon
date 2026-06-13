@@ -1,0 +1,65 @@
+vpc_templates:
+  - name: standard-3tier
+    description: Standard 3-tier VPC with public, private, and data subnets
+    cidr: "10.0.0.0/16"
+    subnets:
+      - name: public-a
+        cidr: "10.0.1.0/24"
+        zone_suffix: a
+        type: public
+      - name: public-b
+        cidr: "10.0.2.0/24"
+        zone_suffix: b
+        type: public
+      - name: private-a
+        cidr: "10.0.10.0/24"
+        zone_suffix: a
+        type: private
+      - name: private-b
+        cidr: "10.0.11.0/24"
+        zone_suffix: b
+        type: private
+      - name: data-a
+        cidr: "10.0.20.0/24"
+        zone_suffix: a
+        type: isolated
+      - name: data-b
+        cidr: "10.0.21.0/24"
+        zone_suffix: b
+        type: isolated
+    nat_gateway: true
+    internet_gateway: true
+    status: active
+
+  - name: simple-public
+    description: Simple VPC with public subnets only
+    cidr: "10.0.0.0/16"
+    subnets:
+      - name: public-a
+        cidr: "10.0.1.0/24"
+        zone_suffix: a
+        type: public
+      - name: public-b
+        cidr: "10.0.2.0/24"
+        zone_suffix: b
+        type: public
+    nat_gateway: false
+    internet_gateway: true
+    status: active
+
+  - name: isolated-private
+    description: Fully isolated VPC with no internet access
+    cidr: "10.0.0.0/16"
+    subnets:
+      - name: isolated-a
+        cidr: "10.0.1.0/24"
+        zone_suffix: a
+        type: isolated
+      - name: isolated-b
+        cidr: "10.0.2.0/24"
+        zone_suffix: b
+        type: isolated
+    nat_gateway: false
+    internet_gateway: false
+    private_link: true
+    status: active

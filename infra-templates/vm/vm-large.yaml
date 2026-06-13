@@ -1,0 +1,30 @@
+template:
+  name: vm-large
+  description: Large VM deployment template for demanding workloads
+  version: "1.0.0"
+  category: compute
+  parameters:
+    instance_type: gp-large-v1
+    os_image: ubuntu-24.04
+    storage:
+      root_volume:
+        size_gb: 100
+        type: premium-ssd
+      data_volume:
+        size_gb: 500
+        type: premium-ssd
+        mount_point: /data
+    networking:
+      vpc: default
+      subnet: private
+      security_group: sg-app-private
+      public_ip: false
+  monitoring:
+    enabled: true
+    metrics: ["cpu", "memory", "disk", "network", "process"]
+    alert_profile: high-performance
+  backup:
+    enabled: true
+    schedule: "every-6-hours"
+    retention_days: 30
+  status: active

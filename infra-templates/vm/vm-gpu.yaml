@@ -1,0 +1,29 @@
+template:
+  name: vm-gpu
+  description: GPU VM template for ML/AI workloads
+  version: "1.0.0"
+  category: compute
+  parameters:
+    instance_type: gpu-medium-v1
+    os_image: ubuntu-22.04
+    storage:
+      root_volume:
+        size_gb: 200
+        type: premium-ssd
+      data_volume:
+        size_gb: 1000
+        type: ultra-ssd
+        mount_point: /data
+    networking:
+      vpc: default
+      subnet: private
+      security_group: sg-app-private
+      public_ip: false
+    gpu:
+      driver_version: "535.104.05"
+      cuda_version: "12.1"
+  monitoring:
+    enabled: true
+    metrics: ["cpu", "memory", "disk", "network", "gpu_utilization", "gpu_memory"]
+    alert_profile: gpu-workload
+  status: active

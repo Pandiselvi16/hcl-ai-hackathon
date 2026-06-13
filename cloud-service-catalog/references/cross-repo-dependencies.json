@@ -1,0 +1,95 @@
+{
+  "description": "Cross-repository dependencies and relationships",
+  "dependencies": [
+    {
+      "from": "infra-templates",
+      "to": "cloud-vm-catalog",
+      "reason": "Templates reference VM instance types"
+    },
+    {
+      "from": "infra-templates",
+      "to": "k8s-addon-registry",
+      "reason": "K8s templates reference addons"
+    },
+    {
+      "from": "infra-templates",
+      "to": "cloud-storage-catalog",
+      "reason": "Templates reference storage tiers"
+    },
+    {
+      "from": "infra-templates",
+      "to": "network-service-catalog",
+      "reason": "Templates reference network services"
+    },
+    {
+      "from": "infra-templates",
+      "to": "database-service-catalog",
+      "reason": "Templates reference database engines"
+    },
+    {
+      "from": "cloud-vm-catalog",
+      "to": "cloud-regions",
+      "reason": "Instance availability per region"
+    },
+    {
+      "from": "cloud-storage-catalog",
+      "to": "cloud-regions",
+      "reason": "Storage availability per region"
+    },
+    {
+      "from": "database-service-catalog",
+      "to": "cloud-regions",
+      "reason": "Database availability per region"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "cloud-vm-catalog",
+      "reason": "Service catalog references VM catalog"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "cloud-storage-catalog",
+      "reason": "Service catalog references storage catalog"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "network-service-catalog",
+      "reason": "Service catalog references network services"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "database-service-catalog",
+      "reason": "Service catalog references database catalog"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "cloud-iam-policies",
+      "reason": "Service catalog references IAM"
+    },
+    {
+      "from": "cloud-service-catalog",
+      "to": "cloud-backup-policies",
+      "reason": "Service catalog references backup policies"
+    },
+    {
+      "from": "cloud-backup-policies",
+      "to": "cloud-regions",
+      "reason": "Backup policies reference regions for DR"
+    },
+    {
+      "from": "cloud-backup-policies",
+      "to": "cloud-storage-catalog",
+      "reason": "Backup storage tier references"
+    },
+    {
+      "from": "cloud-iam-policies",
+      "to": "cloud-service-catalog",
+      "reason": "IAM policies reference services"
+    },
+    {
+      "from": "monitoring-service-registry",
+      "to": "k8s-addon-registry",
+      "reason": "Monitoring addons"
+    }
+  ]
+}

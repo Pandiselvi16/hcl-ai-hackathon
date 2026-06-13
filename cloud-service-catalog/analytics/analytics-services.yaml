@@ -1,0 +1,33 @@
+category: analytics
+description: Data analytics and processing services
+services:
+  - name: data-warehouse
+    description: Managed data warehouse for analytics
+    features: ["sql-queries", "auto-scaling", "materialized-views", "ml-integration"]
+    max_storage_pb: 10
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1"]
+    status: active
+
+  - name: stream-processing
+    description: Real-time data stream processing
+    features: ["kafka-compatible", "windowing", "exactly-once", "auto-scaling"]
+    sla_availability_pct: 99.95
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active
+
+  - name: data-lake
+    description: Managed data lake for raw and processed data
+    features: ["schema-on-read", "cataloging", "governance", "etl-integration"]
+    storage_backend: object-storage
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1"]
+    status: active
+
+  - name: search-service
+    description: Managed full-text search and analytics
+    engine: elasticsearch
+    features: ["full-text-search", "aggregations", "geo-search", "ml-anomaly-detection"]
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active

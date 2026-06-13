@@ -1,0 +1,24 @@
+{
+  "defaults": {
+    "block_storage": {
+      "default_tier": "standard-ssd",
+      "default_size_gb": 100,
+      "encryption": true,
+      "snapshot_enabled": true
+    },
+    "object_storage": {
+      "default_tier": "standard",
+      "versioning": false,
+      "encryption": true
+    },
+    "file_storage": {
+      "default_tier": "nfs-standard",
+      "encryption": true
+    }
+  },
+  "quotas": {
+    "max_volumes_per_vm": 16,
+    "max_total_storage_tb": 500,
+    "max_snapshots_per_volume": 100
+  }
+}

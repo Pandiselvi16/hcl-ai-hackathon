@@ -1,0 +1,38 @@
+{
+  "pricing_model": "spot",
+  "currency": "USD",
+  "description": "Discounted capacity with possible interruptions",
+  "last_updated": "2026-05-01",
+  "prices": [
+    {
+      "instance_type": "gp-small-v1",
+      "avg_price_per_hour": 0.016,
+      "max_discount_pct": 70,
+      "interruption_rate_pct": 5
+    },
+    {
+      "instance_type": "gp-medium-v1",
+      "avg_price_per_hour": 0.031,
+      "max_discount_pct": 70,
+      "interruption_rate_pct": 5
+    },
+    {
+      "instance_type": "gp-large-v1",
+      "avg_price_per_hour": 0.062,
+      "max_discount_pct": 70,
+      "interruption_rate_pct": 8
+    },
+    {
+      "instance_type": "co-small-v1",
+      "avg_price_per_hour": 0.026,
+      "max_discount_pct": 70,
+      "interruption_rate_pct": 10
+    },
+    {
+      "instance_type": "co-medium-v1",
+      "avg_price_per_hour": 0.051,
+      "max_discount_pct": 70,
+      "interruption_rate_pct": 10
+    }
+  ]
+}

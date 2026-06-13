@@ -1,0 +1,40 @@
+runbooks:
+  - name: vm-recovery
+    description: Steps to recover a VM from backup
+    dr_plan: dr-standard
+    steps:
+      - description: Identify the failed VM and last successful backup
+      - description: Select the appropriate snapshot based on RPO
+      - description: Launch new VM from snapshot in target region
+      - description: Update DNS records to point to new VM
+      - description: Verify application functionality
+      - description: Update monitoring and alerting
+    estimated_time_minutes: 60
+    status: active
+
+  - name: database-failover
+    description: Steps to failover database to DR region
+    dr_plan: dr-business-critical
+    steps:
+      - description: Confirm primary database is unreachable
+      - description: Promote read replica in DR region to primary
+      - description: Update application connection strings
+      - description: Verify data consistency
+      - description: Resume backup schedule for new primary
+      - description: Plan re-sync of original region when available
+    estimated_time_minutes: 30
+    status: active
+
+  - name: full-region-failover
+    description: Steps for complete region failover
+    dr_plan: dr-mission-critical
+    steps:
+      - description: Declare regional disaster
+      - description: Activate global load balancer failover
+      - description: Verify all database replicas promoted
+      - description: Confirm application services running in DR region
+      - description: Switch DNS records
+      - description: Notify stakeholders
+      - description: Begin incident post-mortem
+    estimated_time_minutes: 15
+    status: active

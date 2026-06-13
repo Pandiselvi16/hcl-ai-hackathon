@@ -1,0 +1,66 @@
+{
+  "category": "arm",
+  "description": "ARM-based instances for cost-efficient and energy-efficient computing",
+  "instances": [
+    {
+      "name": "arm-small-v1",
+      "vcpus": 2,
+      "memory_gb": 4,
+      "storage_gb": 50,
+      "network_bandwidth_gbps": 2,
+      "max_iops": 4000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "arm64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.04
+    },
+    {
+      "name": "arm-medium-v1",
+      "vcpus": 4,
+      "memory_gb": 8,
+      "storage_gb": 100,
+      "network_bandwidth_gbps": 5,
+      "max_iops": 8000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "arm64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.08
+    },
+    {
+      "name": "arm-large-v1",
+      "vcpus": 8,
+      "memory_gb": 16,
+      "storage_gb": 200,
+      "network_bandwidth_gbps": 10,
+      "max_iops": 16000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "arm64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.16
+    },
+    {
+      "name": "arm-xlarge-v1",
+      "vcpus": 16,
+      "memory_gb": 32,
+      "storage_gb": 500,
+      "network_bandwidth_gbps": 15,
+      "max_iops": 32000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "arm64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.32
+    }
+  ]
+}

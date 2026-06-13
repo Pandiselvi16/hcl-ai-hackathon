@@ -1,0 +1,63 @@
+category: monitoring
+description: Monitoring and observability addons for Kubernetes clusters
+addons:
+  - name: prometheus-stack
+    version: "2.50.0"
+    description: Prometheus monitoring with Grafana dashboards
+    namespace: monitoring
+    helm_chart: prometheus-community/kube-prometheus-stack
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "500m"
+      memory: "1Gi"
+    dependencies: []
+
+  - name: datadog-agent
+    version: "3.58.0"
+    description: Datadog monitoring agent for Kubernetes
+    namespace: datadog
+    helm_chart: datadog/datadog
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "512Mi"
+    dependencies: []
+
+  - name: elastic-apm
+    version: "8.13.0"
+    description: Elastic APM for distributed tracing
+    namespace: elastic
+    helm_chart: elastic/apm-server
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "300m"
+      memory: "768Mi"
+    dependencies: []
+
+  - name: jaeger
+    version: "1.56.0"
+    description: Jaeger distributed tracing system
+    namespace: tracing
+    helm_chart: jaegertracing/jaeger
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "250m"
+      memory: "512Mi"
+    dependencies: []
+
+  - name: grafana-loki
+    version: "3.0.0"
+    description: Loki log aggregation system
+    namespace: monitoring
+    helm_chart: grafana/loki-stack
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "400m"
+      memory: "1Gi"
+    dependencies:
+      - prometheus-stack

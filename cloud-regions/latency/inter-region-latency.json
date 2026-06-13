@@ -1,0 +1,66 @@
+{
+  "description": "Average inter-region network latency in milliseconds",
+  "last_updated": "2026-05-01",
+  "measurements": [
+    {
+      "from": "us-east-1",
+      "to": "us-west-1",
+      "latency_ms": 62
+    },
+    {
+      "from": "us-east-1",
+      "to": "eu-west-1",
+      "latency_ms": 85
+    },
+    {
+      "from": "us-east-1",
+      "to": "ap-south-1",
+      "latency_ms": 190
+    },
+    {
+      "from": "us-east-1",
+      "to": "ap-northeast-1",
+      "latency_ms": 160
+    },
+    {
+      "from": "eu-west-1",
+      "to": "eu-central-1",
+      "latency_ms": 25
+    },
+    {
+      "from": "eu-west-1",
+      "to": "ap-south-1",
+      "latency_ms": 130
+    },
+    {
+      "from": "eu-central-1",
+      "to": "me-south-1",
+      "latency_ms": 95
+    },
+    {
+      "from": "ap-south-1",
+      "to": "ap-southeast-1",
+      "latency_ms": 55
+    },
+    {
+      "from": "ap-southeast-1",
+      "to": "ap-northeast-1",
+      "latency_ms": 70
+    },
+    {
+      "from": "us-west-1",
+      "to": "ap-northeast-1",
+      "latency_ms": 110
+    },
+    {
+      "from": "sa-east-1",
+      "to": "us-east-1",
+      "latency_ms": 120
+    },
+    {
+      "from": "af-south-1",
+      "to": "eu-west-1",
+      "latency_ms": 145
+    }
+  ]
+}

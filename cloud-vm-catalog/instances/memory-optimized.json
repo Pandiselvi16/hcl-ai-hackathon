@@ -1,0 +1,85 @@
+{
+  "category": "memory-optimized",
+  "description": "High memory-to-CPU ratio for memory-intensive workloads",
+  "instances": [
+    {
+      "name": "mo-small-v1",
+      "vcpus": 2,
+      "memory_gb": 16,
+      "storage_gb": 100,
+      "network_bandwidth_gbps": 2,
+      "max_iops": 4000,
+      "os_support": [
+        "linux",
+        "windows"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.095
+    },
+    {
+      "name": "mo-medium-v1",
+      "vcpus": 4,
+      "memory_gb": 32,
+      "storage_gb": 200,
+      "network_bandwidth_gbps": 5,
+      "max_iops": 8000,
+      "os_support": [
+        "linux",
+        "windows"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.19
+    },
+    {
+      "name": "mo-large-v1",
+      "vcpus": 8,
+      "memory_gb": 64,
+      "storage_gb": 500,
+      "network_bandwidth_gbps": 10,
+      "max_iops": 16000,
+      "os_support": [
+        "linux",
+        "windows"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.38
+    },
+    {
+      "name": "mo-xlarge-v1",
+      "vcpus": 16,
+      "memory_gb": 128,
+      "storage_gb": 1000,
+      "network_bandwidth_gbps": 15,
+      "max_iops": 32000,
+      "os_support": [
+        "linux",
+        "windows"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 0.76
+    },
+    {
+      "name": "mo-2xlarge-v1",
+      "vcpus": 32,
+      "memory_gb": 256,
+      "storage_gb": 2000,
+      "network_bandwidth_gbps": 25,
+      "max_iops": 64000,
+      "os_support": [
+        "linux"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 1,
+      "price_per_hour_usd": 1.52
+    }
+  ]
+}

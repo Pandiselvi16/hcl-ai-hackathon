@@ -1,0 +1,38 @@
+category: autoscaling
+description: Autoscaling addons for Kubernetes workloads and clusters
+addons:
+  - name: cluster-autoscaler
+    version: "9.36.0"
+    description: Automatically adjusts cluster size
+    namespace: kube-system
+    helm_chart: autoscaler/cluster-autoscaler
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "256Mi"
+    dependencies: []
+
+  - name: keda
+    version: "2.14.0"
+    description: Event-driven autoscaling for Kubernetes
+    namespace: keda
+    helm_chart: kedacore/keda
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies: []
+
+  - name: vpa
+    version: "1.0.0"
+    description: Vertical Pod Autoscaler for resource right-sizing
+    namespace: kube-system
+    helm_chart: fairwinds-stable/vpa
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "128Mi"
+    dependencies: []

@@ -1,0 +1,33 @@
+lifecycle_policies:
+  - name: standard-lifecycle
+    description: Default lifecycle policy for cost optimization
+    transitions:
+      - from: standard
+        to: infrequent-access
+        after_days: 30
+      - from: infrequent-access
+        to: archive
+        after_days: 90
+      - from: archive
+        to: deep-archive
+        after_days: 365
+    delete_after_days: null
+    status: active
+
+  - name: compliance-7year
+    description: 7-year retention for regulatory compliance
+    transitions:
+      - from: standard
+        to: archive
+        after_days: 90
+      - from: archive
+        to: cold-archive
+        after_days: 365
+    delete_after_days: 2555
+    status: active
+
+  - name: temp-data
+    description: Auto-delete temporary data
+    transitions: []
+    delete_after_days: 7
+    status: active

@@ -1,0 +1,36 @@
+image_policies:
+  - name: production-policy
+    description: Policy for production container images
+    environment: production
+    rules:
+      - Only approved registries allowed
+      - No images with critical vulnerabilities
+      - No images with high vulnerabilities older than 30 days
+      - Images must be signed with cosign
+      - No latest tag in production
+      - Must use specific digest or semantic version
+    max_image_age_days: 90
+    required_labels:
+      - maintainer
+      - version
+      - build-date
+    status: active
+
+  - name: staging-policy
+    description: Policy for staging container images
+    environment: staging
+    rules:
+      - Only approved registries allowed
+      - No images with critical vulnerabilities
+      - Image signing recommended but not required
+    max_image_age_days: 180
+    status: active
+
+  - name: development-policy
+    description: Policy for development container images
+    environment: development
+    rules:
+      - Approved registries preferred
+      - Vulnerability scanning informational only
+    max_image_age_days: null
+    status: active

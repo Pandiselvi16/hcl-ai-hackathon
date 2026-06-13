@@ -1,0 +1,32 @@
+replication_policies:
+  - name: single-zone
+    description: Data replicated within a single availability zone
+    copies: 3
+    zones: 1
+    regions: 1
+    rpo_hours: 0
+    status: active
+
+  - name: multi-zone
+    description: Data replicated across availability zones in a region
+    copies: 3
+    zones: 3
+    regions: 1
+    rpo_hours: 0
+    status: active
+
+  - name: cross-region
+    description: Data replicated across multiple regions
+    copies: 6
+    zones: 3
+    regions: 2
+    rpo_hours: 1
+    status: active
+
+  - name: geo-redundant
+    description: Data replicated across geographic regions for DR
+    copies: 6
+    zones: 6
+    regions: 3
+    rpo_hours: 4
+    status: active

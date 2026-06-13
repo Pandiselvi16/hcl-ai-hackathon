@@ -1,0 +1,34 @@
+template:
+  name: vm-medium
+  description: Medium VM deployment template
+  version: "1.0.0"
+  category: compute
+  parameters:
+    instance_type: gp-medium-v1
+    os_image: ubuntu-24.04
+    storage:
+      root_volume:
+        size_gb: 100
+        type: standard-ssd
+      data_volume:
+        size_gb: 200
+        type: premium-ssd
+        mount_point: /data
+    networking:
+      vpc: default
+      subnet: private
+      security_group: sg-app-private
+      public_ip: false
+    tags:
+      environment: ""
+      team: ""
+      project: ""
+  monitoring:
+    enabled: true
+    metrics: ["cpu", "memory", "disk", "network"]
+    alert_profile: default
+  backup:
+    enabled: true
+    schedule: daily
+    retention_days: 14
+  status: active

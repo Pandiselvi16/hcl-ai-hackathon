@@ -1,0 +1,49 @@
+{
+  "continent": "Middle East",
+  "regions": [
+    {
+      "name": "me-south-1",
+      "display_name": "Middle East (Bahrain)",
+      "country": "Bahrain",
+      "latitude": 26.0667,
+      "longitude": 50.5577,
+      "availability_zones": [
+        "me-south-1a",
+        "me-south-1b"
+      ],
+      "status": "active",
+      "launched": "2023-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "me-central-1",
+      "display_name": "Middle East (UAE)",
+      "country": "United Arab Emirates",
+      "latitude": 24.4539,
+      "longitude": 54.3773,
+      "availability_zones": [
+        "me-central-1a",
+        "me-central-1b"
+      ],
+      "status": "active",
+      "launched": "2024-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2"
+      ]
+    }
+  ]
+}

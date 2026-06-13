@@ -1,0 +1,54 @@
+dashboards:
+  - name: cluster-overview
+    description: Kubernetes cluster health overview
+    provider: grafana
+    uid: cluster-overview-v1
+    panels:
+      - title: Node Count
+        type: stat
+        metric: "kube_node_info"
+      - title: Pod Count
+        type: stat
+        metric: "kube_pod_info"
+      - title: CPU Usage
+        type: timeseries
+        metric: "node_cpu_seconds_total"
+      - title: Memory Usage
+        type: timeseries
+        metric: "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes"
+    status: active
+
+  - name: application-performance
+    description: Application performance metrics
+    provider: grafana
+    uid: app-performance-v1
+    panels:
+      - title: Request Rate
+        type: timeseries
+        metric: "rate(http_requests_total[5m])"
+      - title: Error Rate
+        type: timeseries
+        metric: "rate(http_requests_total{status_code=~'5..'}[5m])"
+      - title: Latency P50/P95/P99
+        type: timeseries
+        metric: "histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m]))"
+      - title: Active Connections
+        type: stat
+        metric: "active_connections"
+    status: active
+
+  - name: database-monitoring
+    description: Database performance and health
+    provider: grafana
+    uid: db-monitoring-v1
+    panels:
+      - title: Query Rate
+        type: timeseries
+        metric: "rate(database_queries_total[5m])"
+      - title: Connection Pool
+        type: gauge
+        metric: "database_connections_active / database_connections_max"
+      - title: Replication Lag
+        type: timeseries
+        metric: "database_replication_lag_seconds"
+    status: active

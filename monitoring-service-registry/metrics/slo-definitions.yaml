@@ -1,0 +1,30 @@
+slo_definitions:
+  - name: api-availability
+    description: API availability SLO
+    target_percentage: 99.95
+    measurement_window: 30d
+    indicator:
+      type: availability
+      good_events: "http_requests_total{status_code!~'5..'}"
+      total_events: "http_requests_total"
+    status: active
+
+  - name: api-latency-p99
+    description: API p99 latency SLO
+    target_percentage: 99.0
+    measurement_window: 30d
+    indicator:
+      type: latency
+      threshold_seconds: 0.5
+      metric: "http_request_duration_seconds"
+    status: active
+
+  - name: database-availability
+    description: Database service availability
+    target_percentage: 99.99
+    measurement_window: 30d
+    indicator:
+      type: availability
+      good_events: "database_up == 1"
+      total_events: "time_window"
+    status: active

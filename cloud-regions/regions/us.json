@@ -1,0 +1,127 @@
+{
+  "continent": "North America",
+  "country": "United States",
+  "regions": [
+    {
+      "name": "us-east-1",
+      "display_name": "US East (Virginia)",
+      "latitude": 39.0438,
+      "longitude": -77.4874,
+      "availability_zones": [
+        "us-east-1a",
+        "us-east-1b",
+        "us-east-1c"
+      ],
+      "status": "active",
+      "launched": "2020-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai",
+        "analytics"
+      ],
+      "compliance": [
+        "SOC2",
+        "HIPAA",
+        "FedRAMP",
+        "PCI-DSS"
+      ]
+    },
+    {
+      "name": "us-east-2",
+      "display_name": "US East (Ohio)",
+      "latitude": 40.4173,
+      "longitude": -82.9071,
+      "availability_zones": [
+        "us-east-2a",
+        "us-east-2b",
+        "us-east-2c"
+      ],
+      "status": "active",
+      "launched": "2020-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "HIPAA"
+      ]
+    },
+    {
+      "name": "us-west-1",
+      "display_name": "US West (Oregon)",
+      "latitude": 45.5945,
+      "longitude": -122.1562,
+      "availability_zones": [
+        "us-west-1a",
+        "us-west-1b",
+        "us-west-1c"
+      ],
+      "status": "active",
+      "launched": "2020-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai",
+        "analytics"
+      ],
+      "compliance": [
+        "SOC2",
+        "HIPAA",
+        "PCI-DSS"
+      ]
+    },
+    {
+      "name": "us-west-2",
+      "display_name": "US West (California)",
+      "latitude": 37.3861,
+      "longitude": -122.0839,
+      "availability_zones": [
+        "us-west-2a",
+        "us-west-2b"
+      ],
+      "status": "active",
+      "launched": "2021-03-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2"
+      ]
+    },
+    {
+      "name": "us-central-1",
+      "display_name": "US Central (Texas)",
+      "latitude": 32.8998,
+      "longitude": -97.0403,
+      "availability_zones": [
+        "us-central-1a",
+        "us-central-1b",
+        "us-central-1c"
+      ],
+      "status": "active",
+      "launched": "2022-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai"
+      ],
+      "compliance": [
+        "SOC2",
+        "HIPAA"
+      ]
+    }
+  ]
+}

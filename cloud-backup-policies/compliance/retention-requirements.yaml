@@ -1,0 +1,30 @@
+retention_requirements:
+  - regulation: SOC2
+    data_types: ["audit-logs", "access-logs"]
+    min_retention_days: 365
+    status: enforced
+
+  - regulation: HIPAA
+    data_types: ["patient-data", "audit-logs"]
+    min_retention_years: 6
+    encryption_required: true
+    status: enforced
+
+  - regulation: GDPR
+    data_types: ["personal-data"]
+    max_retention_days: null
+    right_to_deletion: true
+    notes: "Retention must be justified by legal basis"
+    status: enforced
+
+  - regulation: PCI-DSS
+    data_types: ["payment-data", "audit-logs"]
+    min_retention_years: 1
+    encryption_required: true
+    status: enforced
+
+  - regulation: internal-policy
+    data_types: ["all"]
+    min_retention_days: 30
+    max_retention_years: 7
+    status: enforced

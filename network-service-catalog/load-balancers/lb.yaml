@@ -1,0 +1,48 @@
+category: load-balancers
+description: Load balancer offerings for distributing traffic
+services:
+  - name: application-lb
+    type: Layer 7
+    protocol_support: ["HTTP", "HTTPS", "WebSocket", "gRPC"]
+    health_checks: true
+    ssl_termination: true
+    sticky_sessions: true
+    max_backends: 1000
+    cross_zone: true
+    waf_integration: true
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1"]
+    price_per_hour_usd: 0.0225
+    status: active
+
+  - name: network-lb
+    type: Layer 4
+    protocol_support: ["TCP", "UDP", "TLS"]
+    health_checks: true
+    ssl_termination: false
+    sticky_sessions: false
+    max_connections_per_sec: 1000000
+    ultra_low_latency: true
+    static_ip: true
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1"]
+    price_per_hour_usd: 0.0225
+    status: active
+
+  - name: classic-lb
+    type: Layer 4/7
+    protocol_support: ["HTTP", "HTTPS", "TCP", "SSL"]
+    health_checks: true
+    ssl_termination: true
+    max_backends: 200
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    price_per_hour_usd: 0.025
+    status: deprecated
+
+  - name: internal-lb
+    type: Layer 4
+    protocol_support: ["TCP", "UDP"]
+    health_checks: true
+    internal_only: true
+    max_backends: 500
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1"]
+    price_per_hour_usd: 0.010
+    status: active

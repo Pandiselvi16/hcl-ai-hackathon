@@ -1,0 +1,46 @@
+profiles:
+  - name: web-standard
+    description: Standard web application load balancing
+    lb_type: application-lb
+    settings:
+      idle_timeout_seconds: 60
+      connection_draining: true
+      draining_timeout_seconds: 300
+      access_logging: true
+    health_check:
+      protocol: HTTP
+      path: /health
+      interval_seconds: 30
+      timeout_seconds: 5
+      healthy_threshold: 3
+      unhealthy_threshold: 3
+
+  - name: api-gateway
+    description: API gateway load balancing with path routing
+    lb_type: application-lb
+    settings:
+      idle_timeout_seconds: 120
+      connection_draining: true
+      draining_timeout_seconds: 60
+      access_logging: true
+      path_based_routing: true
+    health_check:
+      protocol: HTTP
+      path: /api/health
+      interval_seconds: 15
+      timeout_seconds: 3
+      healthy_threshold: 2
+      unhealthy_threshold: 2
+
+  - name: high-throughput
+    description: High throughput TCP load balancing
+    lb_type: network-lb
+    settings:
+      cross_zone: true
+      preserve_client_ip: true
+    health_check:
+      protocol: TCP
+      interval_seconds: 10
+      timeout_seconds: 5
+      healthy_threshold: 2
+      unhealthy_threshold: 2

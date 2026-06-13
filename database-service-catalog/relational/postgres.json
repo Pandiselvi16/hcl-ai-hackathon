@@ -1,0 +1,114 @@
+{
+  "engine": "PostgreSQL",
+  "description": "Managed PostgreSQL database service",
+  "versions": [
+    {
+      "version": "14",
+      "status": "active",
+      "end_of_support": "2026-11-09",
+      "extensions": [
+        "postgis",
+        "pg_stat_statements",
+        "uuid-ossp",
+        "hstore",
+        "citext"
+      ]
+    },
+    {
+      "version": "15",
+      "status": "active",
+      "end_of_support": "2027-11-11",
+      "extensions": [
+        "postgis",
+        "pg_stat_statements",
+        "uuid-ossp",
+        "hstore",
+        "citext",
+        "pg_trgm"
+      ]
+    },
+    {
+      "version": "16",
+      "status": "active",
+      "end_of_support": "2028-11-09",
+      "extensions": [
+        "postgis",
+        "pg_stat_statements",
+        "uuid-ossp",
+        "hstore",
+        "citext",
+        "pg_trgm",
+        "pgvector"
+      ]
+    },
+    {
+      "version": "17",
+      "status": "active",
+      "end_of_support": "2029-11-08",
+      "extensions": [
+        "postgis",
+        "pg_stat_statements",
+        "uuid-ossp",
+        "hstore",
+        "citext",
+        "pg_trgm",
+        "pgvector",
+        "pg_cron"
+      ]
+    }
+  ],
+  "instance_classes": [
+    {
+      "name": "db-small",
+      "vcpus": 2,
+      "memory_gb": 4,
+      "max_connections": 100,
+      "max_storage_gb": 500,
+      "price_per_hour_usd": 0.065
+    },
+    {
+      "name": "db-medium",
+      "vcpus": 4,
+      "memory_gb": 8,
+      "max_connections": 500,
+      "max_storage_gb": 1000,
+      "price_per_hour_usd": 0.13
+    },
+    {
+      "name": "db-large",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "max_connections": 1000,
+      "max_storage_gb": 5000,
+      "price_per_hour_usd": 0.38
+    },
+    {
+      "name": "db-xlarge",
+      "vcpus": 16,
+      "memory_gb": 64,
+      "max_connections": 2000,
+      "max_storage_gb": 16000,
+      "price_per_hour_usd": 0.76
+    }
+  ],
+  "features": {
+    "high_availability": true,
+    "read_replicas": true,
+    "max_read_replicas": 5,
+    "automated_backups": true,
+    "point_in_time_recovery": true,
+    "encryption_at_rest": true,
+    "encryption_in_transit": true,
+    "multi_az": true,
+    "cross_region_replicas": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1",
+    "eu-central-1",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-northeast-1"
+  ]
+}

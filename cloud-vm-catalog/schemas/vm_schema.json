@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VM Instance Type",
+  "type": "object",
+  "required": [
+    "name",
+    "vcpus",
+    "memory_gb",
+    "storage_gb",
+    "network_bandwidth_gbps",
+    "os_support",
+    "architecture",
+    "status",
+    "generation",
+    "price_per_hour_usd"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z]+-[a-z]+-v[0-9]+$"
+    },
+    "vcpus": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "memory_gb": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "storage_gb": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "network_bandwidth_gbps": {
+      "type": "number",
+      "minimum": 0.1
+    },
+    "max_iops": {
+      "type": "integer",
+      "minimum": 1000
+    },
+    "os_support": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "linux",
+          "windows"
+        ]
+      }
+    },
+    "architecture": {
+      "type": "string",
+      "enum": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "preview"
+      ]
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "price_per_hour_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "gpu_type": {
+      "type": "string"
+    },
+    "gpu_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "gpu_memory_gb": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

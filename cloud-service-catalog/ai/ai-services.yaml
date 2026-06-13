@@ -1,0 +1,34 @@
+category: ai
+description: AI and machine learning services
+services:
+  - name: ml-platform
+    description: End-to-end machine learning platform
+    features: ["training", "inference", "model-registry", "experiment-tracking"]
+    supported_frameworks: ["pytorch", "tensorflow", "scikit-learn", "xgboost"]
+    gpu_support: true
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1", "ap-south-1"]
+    status: active
+
+  - name: natural-language
+    description: NLP and text processing APIs
+    capabilities: ["sentiment-analysis", "entity-extraction", "translation", "summarization"]
+    supported_languages: 50
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active
+
+  - name: computer-vision
+    description: Image and video analysis APIs
+    capabilities: ["object-detection", "face-recognition", "ocr", "image-classification"]
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1"]
+    status: active
+
+  - name: speech-services
+    description: Speech-to-text and text-to-speech
+    capabilities: ["transcription", "synthesis", "real-time-streaming"]
+    supported_languages: 30
+    sla_availability_pct: 99.9
+    regions: ["us-east-1", "us-west-1", "eu-west-1"]
+    status: active

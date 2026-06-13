@@ -1,0 +1,149 @@
+{
+  "continent": "Asia",
+  "regions": [
+    {
+      "name": "ap-south-1",
+      "display_name": "Asia Pacific (Mumbai)",
+      "country": "India",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "availability_zones": [
+        "ap-south-1a",
+        "ap-south-1b",
+        "ap-south-1c"
+      ],
+      "status": "active",
+      "launched": "2020-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "ap-south-2",
+      "display_name": "Asia Pacific (Hyderabad)",
+      "country": "India",
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "availability_zones": [
+        "ap-south-2a",
+        "ap-south-2b"
+      ],
+      "status": "active",
+      "launched": "2023-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "ap-southeast-1",
+      "display_name": "Asia Pacific (Singapore)",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198,
+      "availability_zones": [
+        "ap-southeast-1a",
+        "ap-southeast-1b",
+        "ap-southeast-1c"
+      ],
+      "status": "active",
+      "launched": "2020-09-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001",
+        "MTCS"
+      ]
+    },
+    {
+      "name": "ap-northeast-1",
+      "display_name": "Asia Pacific (Tokyo)",
+      "country": "Japan",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "availability_zones": [
+        "ap-northeast-1a",
+        "ap-northeast-1b",
+        "ap-northeast-1c"
+      ],
+      "status": "active",
+      "launched": "2021-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking",
+        "ai"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001",
+        "ISMAP"
+      ]
+    },
+    {
+      "name": "ap-northeast-2",
+      "display_name": "Asia Pacific (Seoul)",
+      "country": "South Korea",
+      "latitude": 37.5665,
+      "longitude": 126.978,
+      "availability_zones": [
+        "ap-northeast-2a",
+        "ap-northeast-2b"
+      ],
+      "status": "active",
+      "launched": "2022-06-01",
+      "services": [
+        "compute",
+        "storage",
+        "database",
+        "networking"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001"
+      ]
+    },
+    {
+      "name": "ap-east-1",
+      "display_name": "Asia Pacific (Hong Kong)",
+      "country": "Hong Kong",
+      "latitude": 22.3193,
+      "longitude": 114.1694,
+      "availability_zones": [
+        "ap-east-1a",
+        "ap-east-1b"
+      ],
+      "status": "active",
+      "launched": "2023-01-15",
+      "services": [
+        "compute",
+        "storage",
+        "database"
+      ],
+      "compliance": [
+        "SOC2",
+        "ISO27001"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+alert_rules:
+  - name: high-cpu-usage
+    description: CPU usage exceeds 85% for 5 minutes
+    severity: warning
+    expression: "avg(cpu_usage_percent) > 85"
+    duration: 5m
+    labels:
+      team: infrastructure
+    annotations:
+      summary: "High CPU usage detected"
+      runbook: "https://runbooks.cloud-platform.io/high-cpu"
+    status: active
+
+  - name: high-memory-usage
+    description: Memory usage exceeds 90% for 5 minutes
+    severity: warning
+    expression: "avg(memory_usage_percent) > 90"
+    duration: 5m
+    labels:
+      team: infrastructure
+    status: active
+
+  - name: disk-space-critical
+    description: Disk usage exceeds 95%
+    severity: critical
+    expression: "disk_usage_percent > 95"
+    duration: 2m
+    labels:
+      team: infrastructure
+    status: active
+
+  - name: pod-crash-looping
+    description: Pod restarted more than 5 times in 10 minutes
+    severity: critical
+    expression: "rate(kube_pod_container_status_restarts_total[10m]) > 0.5"
+    duration: 1m
+    labels:
+      team: platform
+    status: active
+
+  - name: high-error-rate
+    description: Error rate exceeds 5% for 5 minutes
+    severity: critical
+    expression: "rate(http_requests_total{status_code=~'5..'}[5m]) / rate(http_requests_total[5m]) > 0.05"
+    duration: 5m
+    labels:
+      team: application
+    status: active
+
+  - name: high-latency-p99
+    description: P99 latency exceeds 2 seconds
+    severity: warning
+    expression: "histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m])) > 2"
+    duration: 5m
+    labels:
+      team: application
+    status: active
+
+  - name: database-connection-pool-exhausted
+    description: Database connection pool usage above 90%
+    severity: critical
+    expression: "database_connections_active / database_connections_max > 0.9"
+    duration: 2m
+    labels:
+      team: database
+    status: active
+
+  - name: certificate-expiry
+    description: TLS certificate expiring within 30 days
+    severity: warning
+    expression: "cert_expiry_days < 30"
+    duration: 1h
+    labels:
+      team: security
+    status: active

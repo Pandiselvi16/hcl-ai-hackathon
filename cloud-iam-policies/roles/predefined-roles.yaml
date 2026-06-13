@@ -1,0 +1,122 @@
+category: predefined-roles
+description: Platform-managed IAM roles
+roles:
+  - name: admin
+    display_name: Administrator
+    description: Full access to all cloud resources
+    scope: organization
+    permissions: ["*"]
+    assignable_scopes: ["organization", "project"]
+    status: active
+
+  - name: viewer
+    display_name: Viewer
+    description: Read-only access to all resources
+    scope: project
+    permissions:
+      - "compute.instances.list"
+      - "compute.instances.get"
+      - "storage.buckets.list"
+      - "storage.objects.list"
+      - "database.instances.list"
+      - "networking.vpcs.list"
+      - "monitoring.metrics.read"
+    assignable_scopes: ["organization", "project"]
+    status: active
+
+  - name: compute-admin
+    display_name: Compute Administrator
+    description: Full access to compute resources
+    scope: project
+    permissions:
+      - "compute.instances.*"
+      - "compute.disks.*"
+      - "compute.images.*"
+      - "compute.snapshots.*"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: network-admin
+    display_name: Network Administrator
+    description: Full access to networking resources
+    scope: project
+    permissions:
+      - "networking.vpcs.*"
+      - "networking.subnets.*"
+      - "networking.firewalls.*"
+      - "networking.loadbalancers.*"
+      - "networking.dns.*"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: storage-admin
+    display_name: Storage Administrator
+    description: Full access to storage resources
+    scope: project
+    permissions:
+      - "storage.buckets.*"
+      - "storage.objects.*"
+      - "storage.volumes.*"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: database-admin
+    display_name: Database Administrator
+    description: Full access to database services
+    scope: project
+    permissions:
+      - "database.instances.*"
+      - "database.backups.*"
+      - "database.users.*"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: security-admin
+    display_name: Security Administrator
+    description: Manage IAM policies, keys, and secrets
+    scope: organization
+    permissions:
+      - "iam.roles.*"
+      - "iam.policies.*"
+      - "iam.serviceaccounts.*"
+      - "kms.keys.*"
+      - "secretmanager.secrets.*"
+    assignable_scopes: ["organization"]
+    status: active
+
+  - name: monitoring-viewer
+    display_name: Monitoring Viewer
+    description: View monitoring data and dashboards
+    scope: project
+    permissions:
+      - "monitoring.metrics.read"
+      - "monitoring.dashboards.read"
+      - "monitoring.alerts.read"
+      - "logging.logs.read"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: k8s-developer
+    display_name: Kubernetes Developer
+    description: Deploy and manage workloads in Kubernetes
+    scope: project
+    permissions:
+      - "kubernetes.clusters.get"
+      - "kubernetes.namespaces.get"
+      - "kubernetes.deployments.*"
+      - "kubernetes.services.*"
+      - "kubernetes.pods.*"
+      - "kubernetes.configmaps.*"
+    assignable_scopes: ["project"]
+    status: active
+
+  - name: billing-viewer
+    display_name: Billing Viewer
+    description: View billing and cost data
+    scope: organization
+    permissions:
+      - "billing.accounts.read"
+      - "billing.usage.read"
+      - "billing.invoices.read"
+    assignable_scopes: ["organization"]
+    status: active

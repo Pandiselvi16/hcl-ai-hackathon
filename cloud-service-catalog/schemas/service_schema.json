@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cloud Service",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "catalog_ref": {
+      "type": "string"
+    },
+    "sla_availability_pct": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "preview",
+        "beta"
+      ]
+    },
+    "regions": {}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "engine": "DynamoDB",
+  "description": "Managed key-value and document database",
+  "modes": [
+    {
+      "name": "on-demand",
+      "description": "Pay-per-request pricing",
+      "read_price_per_million_usd": 1.25,
+      "write_price_per_million_usd": 1.25
+    },
+    {
+      "name": "provisioned",
+      "description": "Provisioned capacity with auto-scaling",
+      "read_price_per_rcu_hour_usd": 0.00013,
+      "write_price_per_wcu_hour_usd": 0.00065
+    }
+  ],
+  "features": {
+    "global_tables": true,
+    "streams": true,
+    "ttl": true,
+    "point_in_time_recovery": true,
+    "encryption_at_rest": true,
+    "on_demand_backup": true,
+    "transactions": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1",
+    "eu-central-1",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-northeast-1"
+  ]
+}

@@ -1,0 +1,21 @@
+template:
+  name: vpc-standard
+  description: Standard 3-tier VPC setup
+  version: "1.0.0"
+  category: network
+  parameters:
+    vpc:
+      cidr: "10.0.0.0/16"
+      template: standard-3tier
+    internet_gateway: true
+    nat_gateway: true
+    dns:
+      private_zone: true
+      zone_name: "internal.cloud-platform.io"
+    security:
+      flow_logs: true
+      network_acls: true
+    load_balancer:
+      type: application-lb
+      profile: web-standard
+  status: active

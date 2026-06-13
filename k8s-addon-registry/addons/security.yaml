@@ -1,0 +1,62 @@
+category: security
+description: Security and compliance addons for Kubernetes
+addons:
+  - name: cert-manager
+    version: "1.14.0"
+    description: X.509 certificate management for Kubernetes
+    namespace: cert-manager
+    helm_chart: jetstack/cert-manager
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "100m"
+      memory: "128Mi"
+    dependencies: []
+
+  - name: falco
+    version: "4.3.0"
+    description: Runtime security and threat detection
+    namespace: falco
+    helm_chart: falcosecurity/falco
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "512Mi"
+    dependencies: []
+
+  - name: kyverno
+    version: "3.1.0"
+    description: Kubernetes policy engine
+    namespace: kyverno
+    helm_chart: kyverno/kyverno
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "300m"
+      memory: "384Mi"
+    dependencies: []
+
+  - name: vault
+    version: "0.28.0"
+    description: HashiCorp Vault for secrets management
+    namespace: vault
+    helm_chart: hashicorp/vault
+    status: active
+    supported_k8s_versions: ["1.27", "1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "250m"
+      memory: "256Mi"
+    dependencies: []
+
+  - name: trivy-operator
+    version: "0.20.0"
+    description: Vulnerability scanning for container images
+    namespace: trivy-system
+    helm_chart: aqua/trivy-operator
+    status: active
+    supported_k8s_versions: ["1.28", "1.29", "1.30"]
+    resource_requirements:
+      cpu: "200m"
+      memory: "256Mi"
+    dependencies: []

@@ -1,0 +1,42 @@
+template:
+  name: data-pipeline
+  description: Data processing pipeline template
+  version: "1.0.0"
+  category: composite
+  components:
+    - name: networking
+      template_ref: vpc-standard
+    - name: ingestion
+      type: managed-queue
+      parameters:
+        engine: kafka
+        brokers: 3
+        retention_hours: 168
+    - name: processing
+      template_ref: k8s-basic
+      overrides:
+        worker_nodes.instance_type: co-large-v1
+        worker_nodes.max_count: 10
+    - name: storage
+      type: object-storage
+      parameters:
+        tier: standard
+        versioning: true
+        lifecycle_policy: standard-lifecycle
+    - name: database
+      type: managed-database
+      parameters:
+        engine: postgres
+        version: "17"
+        instance_class: db-xlarge
+    - name: analytics-store
+      type: managed-database
+      parameters:
+        engine: cassandra
+        version: "4.1"
+        instance_class: cass-large
+  monitoring:
+    enabled: true
+    dashboard: database-monitoring
+    alert_rules: ["high-cpu-usage", "disk-space-critical", "database-connection-pool-exhausted"]
+  status: active

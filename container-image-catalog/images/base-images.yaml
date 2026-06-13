@@ -1,0 +1,77 @@
+category: base
+description: Approved base OS images for container builds
+images:
+  - name: ubuntu-22.04
+    registry: registry.cloud-platform.io
+    repository: base/ubuntu
+    tag: "22.04"
+    digest: "sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 78
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 2
+    status: active
+
+  - name: ubuntu-24.04
+    registry: registry.cloud-platform.io
+    repository: base/ubuntu
+    tag: "24.04"
+    digest: "sha256:b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3"
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 72
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: alpine-3.19
+    registry: registry.cloud-platform.io
+    repository: base/alpine
+    tag: "3.19"
+    digest: "sha256:c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 7
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 0
+    status: active
+
+  - name: debian-12
+    registry: registry.cloud-platform.io
+    repository: base/debian
+    tag: "12-slim"
+    digest: "sha256:d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5"
+    os: linux
+    architecture: ["amd64", "arm64"]
+    size_mb: 52
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 1
+    status: active
+
+  - name: rockylinux-9
+    registry: registry.cloud-platform.io
+    repository: base/rockylinux
+    tag: "9-minimal"
+    digest: "sha256:e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+    os: linux
+    architecture: ["amd64"]
+    size_mb: 95
+    vulnerability_scan:
+      last_scanned: "2026-05-15"
+      critical: 0
+      high: 0
+      medium: 3
+    status: active

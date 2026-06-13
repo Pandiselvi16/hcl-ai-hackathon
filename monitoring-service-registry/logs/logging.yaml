@@ -1,0 +1,34 @@
+logging:
+  provider: loki
+  version: "3.0.0"
+  status: active
+  sources:
+    - name: application-logs
+      type: container
+      format: json
+      labels: ["namespace", "pod", "container"]
+      retention_days: 30
+
+    - name: system-logs
+      type: syslog
+      format: text
+      labels: ["hostname", "facility"]
+      retention_days: 90
+
+    - name: audit-logs
+      type: audit
+      format: json
+      labels: ["user", "action", "resource"]
+      retention_days: 365
+
+    - name: access-logs
+      type: http-access
+      format: combined
+      labels: ["service", "method", "status"]
+      retention_days: 30
+
+  storage:
+    type: object-storage
+    bucket: monitoring-logs-bucket
+    compression: gzip
+    index_period: 24h

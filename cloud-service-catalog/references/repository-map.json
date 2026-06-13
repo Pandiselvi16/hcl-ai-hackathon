@@ -1,0 +1,96 @@
+{
+  "description": "Maps service catalog entries to their source repositories",
+  "repositories": [
+    {
+      "name": "cloud-vm-catalog",
+      "url": "cloud-vm-catalog",
+      "categories": [
+        "compute"
+      ],
+      "description": "VM instance type definitions"
+    },
+    {
+      "name": "k8s-addon-registry",
+      "url": "k8s-addon-registry",
+      "categories": [
+        "compute",
+        "devops"
+      ],
+      "description": "Kubernetes addon definitions"
+    },
+    {
+      "name": "cloud-storage-catalog",
+      "url": "cloud-storage-catalog",
+      "categories": [
+        "storage"
+      ],
+      "description": "Storage tier definitions"
+    },
+    {
+      "name": "cloud-regions",
+      "url": "cloud-regions",
+      "categories": [
+        "infrastructure"
+      ],
+      "description": "Region and AZ definitions"
+    },
+    {
+      "name": "network-service-catalog",
+      "url": "network-service-catalog",
+      "categories": [
+        "networking"
+      ],
+      "description": "Network service definitions"
+    },
+    {
+      "name": "container-image-catalog",
+      "url": "container-image-catalog",
+      "categories": [
+        "compute",
+        "devops"
+      ],
+      "description": "Container image catalog"
+    },
+    {
+      "name": "database-service-catalog",
+      "url": "database-service-catalog",
+      "categories": [
+        "storage"
+      ],
+      "description": "Database engine definitions"
+    },
+    {
+      "name": "monitoring-service-registry",
+      "url": "monitoring-service-registry",
+      "categories": [
+        "devops"
+      ],
+      "description": "Monitoring configurations"
+    },
+    {
+      "name": "infra-templates",
+      "url": "infra-templates",
+      "categories": [
+        "devops"
+      ],
+      "description": "Infrastructure templates"
+    },
+    {
+      "name": "cloud-iam-policies",
+      "url": "cloud-iam-policies",
+      "categories": [
+        "security"
+      ],
+      "description": "IAM roles and policies"
+    },
+    {
+      "name": "cloud-backup-policies",
+      "url": "cloud-backup-policies",
+      "categories": [
+        "storage",
+        "security"
+      ],
+      "description": "Backup and DR policies"
+    }
+  ]
+}

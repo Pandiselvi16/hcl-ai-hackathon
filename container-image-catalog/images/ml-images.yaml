@@ -1,0 +1,55 @@
+category: ml
+description: Machine learning and data science runtime images
+images:
+  - name: pytorch-2.3-cuda12
+    registry: registry.cloud-platform.io
+    repository: ml/pytorch
+    tag: "2.3-cuda12.1"
+    base_image: ubuntu-22.04
+    os: linux
+    architecture: ["amd64"]
+    gpu_required: true
+    cuda_version: "12.1"
+    size_mb: 5800
+    packages: ["pytorch", "torchvision", "torchaudio", "numpy", "pandas"]
+    vulnerability_scan:
+      last_scanned: "2026-05-10"
+      critical: 0
+      high: 1
+      medium: 5
+    status: active
+
+  - name: tensorflow-2.16-cuda12
+    registry: registry.cloud-platform.io
+    repository: ml/tensorflow
+    tag: "2.16-cuda12.1"
+    base_image: ubuntu-22.04
+    os: linux
+    architecture: ["amd64"]
+    gpu_required: true
+    cuda_version: "12.1"
+    size_mb: 4200
+    packages: ["tensorflow", "keras", "numpy", "pandas"]
+    vulnerability_scan:
+      last_scanned: "2026-05-10"
+      critical: 0
+      high: 0
+      medium: 4
+    status: active
+
+  - name: jupyter-datascience
+    registry: registry.cloud-platform.io
+    repository: ml/jupyter
+    tag: "latest"
+    base_image: ubuntu-22.04
+    os: linux
+    architecture: ["amd64", "arm64"]
+    gpu_required: false
+    size_mb: 2100
+    packages: ["jupyter", "numpy", "pandas", "scikit-learn", "matplotlib", "seaborn"]
+    vulnerability_scan:
+      last_scanned: "2026-05-10"
+      critical: 0
+      high: 0
+      medium: 3
+    status: active

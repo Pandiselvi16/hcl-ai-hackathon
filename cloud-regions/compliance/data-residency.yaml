@@ -1,0 +1,45 @@
+data_residency_requirements:
+  - regulation: GDPR
+    applicable_regions:
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+      - eu-north-1
+      - eu-south-1
+    rules:
+      - Personal data must stay within EU/EEA
+      - Cross-border transfers require adequacy decisions or SCCs
+    status: enforced
+
+  - regulation: HIPAA
+    applicable_regions:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-central-1
+    rules:
+      - PHI must be stored in US regions only
+      - BAA required for all cloud services handling PHI
+    status: enforced
+
+  - regulation: LGPD
+    applicable_regions:
+      - sa-east-1
+    rules:
+      - Brazilian personal data processing regulated
+      - DPO appointment required
+    status: enforced
+
+  - regulation: POPIA
+    applicable_regions:
+      - af-south-1
+    rules:
+      - South African personal data protection
+    status: enforced
+
+  - regulation: PDPA
+    applicable_regions:
+      - ap-southeast-1
+    rules:
+      - Singapore personal data protection
+    status: enforced

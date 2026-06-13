@@ -1,0 +1,77 @@
+{
+  "engine": "MySQL",
+  "description": "Managed MySQL database service",
+  "versions": [
+    {
+      "version": "8.0",
+      "status": "active",
+      "end_of_support": "2026-04-30",
+      "features": [
+        "group_replication",
+        "window_functions",
+        "cte"
+      ]
+    },
+    {
+      "version": "8.4",
+      "status": "active",
+      "end_of_support": "2029-04-30",
+      "features": [
+        "group_replication",
+        "window_functions",
+        "cte",
+        "json_table"
+      ]
+    }
+  ],
+  "instance_classes": [
+    {
+      "name": "db-small",
+      "vcpus": 2,
+      "memory_gb": 4,
+      "max_connections": 150,
+      "max_storage_gb": 500,
+      "price_per_hour_usd": 0.058
+    },
+    {
+      "name": "db-medium",
+      "vcpus": 4,
+      "memory_gb": 8,
+      "max_connections": 500,
+      "max_storage_gb": 1000,
+      "price_per_hour_usd": 0.116
+    },
+    {
+      "name": "db-large",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "max_connections": 1000,
+      "max_storage_gb": 5000,
+      "price_per_hour_usd": 0.34
+    },
+    {
+      "name": "db-xlarge",
+      "vcpus": 16,
+      "memory_gb": 64,
+      "max_connections": 3000,
+      "max_storage_gb": 16000,
+      "price_per_hour_usd": 0.68
+    }
+  ],
+  "features": {
+    "high_availability": true,
+    "read_replicas": true,
+    "max_read_replicas": 5,
+    "automated_backups": true,
+    "encryption_at_rest": true,
+    "multi_az": true
+  },
+  "regions": [
+    "us-east-1",
+    "us-west-1",
+    "eu-west-1",
+    "eu-central-1",
+    "ap-south-1",
+    "ap-southeast-1"
+  ]
+}

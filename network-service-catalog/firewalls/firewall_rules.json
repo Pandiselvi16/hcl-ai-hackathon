@@ -1,0 +1,135 @@
+{
+  "category": "firewalls",
+  "description": "Cloud firewall and security group rule templates",
+  "rule_templates": [
+    {
+      "name": "web-server",
+      "description": "Standard web server rules",
+      "rules": [
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 80,
+          "source": "0.0.0.0/0",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 443,
+          "source": "0.0.0.0/0",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 22,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "outbound",
+          "protocol": "all",
+          "port": "all",
+          "destination": "0.0.0.0/0",
+          "action": "allow"
+        }
+      ]
+    },
+    {
+      "name": "database-server",
+      "description": "Database server rules (internal only)",
+      "rules": [
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 5432,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 3306,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 6379,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 22,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "outbound",
+          "protocol": "all",
+          "port": "all",
+          "destination": "0.0.0.0/0",
+          "action": "allow"
+        }
+      ]
+    },
+    {
+      "name": "bastion-host",
+      "description": "Bastion/jump host rules",
+      "rules": [
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 22,
+          "source": "0.0.0.0/0",
+          "action": "allow"
+        },
+        {
+          "direction": "outbound",
+          "protocol": "TCP",
+          "port": 22,
+          "destination": "10.0.0.0/8",
+          "action": "allow"
+        }
+      ]
+    },
+    {
+      "name": "kubernetes-node",
+      "description": "Kubernetes worker node rules",
+      "rules": [
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": 10250,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "TCP",
+          "port": "30000-32767",
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "inbound",
+          "protocol": "UDP",
+          "port": 8472,
+          "source": "10.0.0.0/8",
+          "action": "allow"
+        },
+        {
+          "direction": "outbound",
+          "protocol": "all",
+          "port": "all",
+          "destination": "0.0.0.0/0",
+          "action": "allow"
+        }
+      ]
+    }
+  ]
+}

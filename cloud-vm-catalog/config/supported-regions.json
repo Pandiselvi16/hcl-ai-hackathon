@@ -1,76 +1,12 @@
 {
   "supported_regions": [
-    {
-      "region": "us-east-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "gpu",
-        "arm",
-        "hs"
-      ]
-    },
-    {
-      "region": "us-west-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "gpu",
-        "arm"
-      ]
-    },
-    {
-      "region": "eu-west-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "arm"
-      ]
-    },
-    {
-      "region": "eu-central-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "arm"
-      ]
-    },
-    {
-      "region": "ap-south-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "arm"
-      ]
-    },
-    {
-      "region": "ap-southeast-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "arm"
-      ]
-    },
-    {
-      "region": "ap-northeast-1",
-      "instance_families": [
-        "gp",
-        "co",
-        "mo",
-        "gpu"
-      ]
-    },
-    {
-      "region": "sa-east-1",
-      "instance_families": [
-        "gp",
-        "co"
-      ]
-    }
+    {"region": "us-east-1", "instance_families": ["gp", "co", "mo", "gpu", "arm", "hs"]},
+    {"region": "us-west-1", "instance_families": ["gp", "co", "mo", "gpu", "arm"]},
+    {"region": "eu-west-1", "instance_families": ["gp", "co", "mo", "arm"]},
+    {"region": "eu-central-1", "instance_families": ["gp", "co", "mo", "arm"]},
+    {"region": "ap-south-1", "instance_families": ["gp", "co", "mo", "arm"]},
+    {"region": "ap-southeast-1", "instance_families": ["gp", "co", "arm"]},
+    {"region": "ap-northeast-1", "instance_families": ["gp", "co", "mo", "gpu"]},
+    {"region": "sa-east-1", "instance_families": ["gp", "co", "mo"]}
   ]
 }

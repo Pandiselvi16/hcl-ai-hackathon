@@ -89,6 +89,16 @@
         "ap-south-1",
         "ap-southeast-1"
       ]
+    },
+    {
+      "instance_type": "gp-large-v2",
+      "price_per_hour": 0.26,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1",
+        "ap-south-1"
+      ]
     }
   ]
 }

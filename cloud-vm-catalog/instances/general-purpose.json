@@ -113,6 +113,22 @@
       "status": "active",
       "generation": 2,
       "price_per_hour_usd": 0.13
+    },
+    {
+      "name": "gp-large-v2",
+      "vcpus": 8,
+      "memory_gb": 32,
+      "storage_gb": 250,
+      "network_bandwidth_gbps": 6,
+      "max_iops": 15000,
+      "os_support": [
+        "linux",
+        "windows"
+      ],
+      "architecture": "x86_64",
+      "status": "active",
+      "generation": 2,
+      "price_per_hour_usd": 0.26
     }
   ]
 }

@@ -4,7 +4,7 @@ template:
   version: "1.0.0"
   category: compute
   parameters:
-    instance_type: gp-small-v1
+    instance_type: gp-small-v2
     os_image: ubuntu-24.04
     storage:
       root_volume:

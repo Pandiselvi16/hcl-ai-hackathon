@@ -1,24 +1,26 @@
-## Pull Request
+## Summary
 
-### Description
-This pull request adds support for the 'mo' instance family in the 'sa-east-1' region by updating the `supported-regions.json` configuration file.
+This pull request updates the Prometheus addon version from 2.50.0 to 2.53.0 in the `k8s-addon-registry/addons/monitoring.yaml` file.
 
-### Changes Made
-- Updated `cloud-vm-catalog/config/supported-regions.json` to include 'mo' in the 'sa-east-1' region.
+## Changes
 
-### Verification
-- Verified that the configuration file is correctly updated and follows the existing pattern.
+- Updated Prometheus version to 2.53.0
 
-### Checklist
-- [x] Code changes have been tested and verified.
-- [x] Documentation has been updated if necessary.
+## Testing
 
-### Related Issues
-- None
+- Verified compatibility with existing Kubernetes versions and configurations.
+- Ensured no regressions or issues with the updated version.
 
-### Additional Notes
-- Ensure that all tests pass before merging.
+## Related Issues
 
----
+- N/A
+
+## Checklist
+
+- [x] Version updated in `monitoring.yaml`
+- [x] Changes committed to `agent_branch`
+- [x] Pull request created for review
+
+## Additional Notes
 
 Please review the changes and merge if everything looks good.

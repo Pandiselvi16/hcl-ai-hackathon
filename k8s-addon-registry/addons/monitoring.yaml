@@ -2,7 +2,7 @@ category: monitoring
 description: Monitoring and observability addons for Kubernetes clusters
 addons:
   - name: prometheus-stack
-    version: "2.50.0"
+    version: "2.53.0"
     description: Prometheus monitoring with Grafana dashboards
     namespace: monitoring
     helm_chart: prometheus-community/kube-prometheus-stack

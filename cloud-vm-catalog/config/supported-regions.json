@@ -69,7 +69,8 @@
       "region": "sa-east-1",
       "instance_families": [
         "gp",
-        "co"
+        "co",
+        "mo"
       ]
     }
   ]

@@ -4,7 +4,7 @@ template:
   version: "1.0.0"
   category: kubernetes
   parameters:
-    k8s_version: "1.30"
+    k8s_version: "1.51"
     control_plane:
       instance_type: gp-large-v1
       count: 3

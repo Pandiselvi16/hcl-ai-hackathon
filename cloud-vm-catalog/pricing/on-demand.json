@@ -99,6 +99,15 @@
         "eu-west-1",
         "ap-south-1"
       ]
+    },
+    {
+      "instance_type": "arm-large-v3",
+      "price_per_hour": 0.160,
+      "regions": [
+        "us-east-1",
+        "us-west-1",
+        "eu-west-1"
+      ]
     }
   ]
 }
